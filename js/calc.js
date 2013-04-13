@@ -26,18 +26,10 @@ $(document).ready(function() {
     // свой формат
     $('#new_format').change(function() {
         if ($('#new_format').is(':checked')) {
-//            $('#format-width, #format-height').removeAttr("disabled");
-            $('.postprint').toggleClass("span6");
-            $('.postprint').toggleClass("span10");
-            $('.fourth').show();
-            $('.sixth').show();
+            $('#format-width, #format-height').removeAttr("disabled");
         }
         else {
-//            $('#format-width, #format-height').attr("disabled", "disabled");
-            $('.postprint').toggleClass("span6");
-            $('.postprint').toggleClass("span10");
-            $('.fourth').hide();
-            $('.sixth').hide();
+            $('#format-width, #format-height').attr("disabled", "disabled");
         }
     })
 
