@@ -1,28 +1,30 @@
-Product: Eurobooklet
-Format: 210x99
-Weight: 7.0
-Spread format: 210x297
+Product: Booklet (brace)
+Format: 297x210
+Weight: 28066.0
+Spread format: 297x420
 Circulation: 10000
-operations: -
+operations: 4766450.0
+    binding: 16200.0
+    selection: 4750250.0
 materials: -
 block
     Printing machine: Heidelberg Speedmaster SM 74
-    operations: 2450.0
-        folding: 2150.0
-        cutting: 300.0
-    materials: 5985.67
-        form: 1216.0
-        paper: 3912.87
-        chemicals: 856.8
-    Sheets on product: 0.25
-    Printing on itself: YES. 0.25 from 0.25
-    Paper: 1270.0, Бумага 'ТомОтто' глянцевая, матовая 47*62, 90 г/м2
-    Paper count: 3081
-    Paper cutting count: 620x457 (x1)
-    Optimal layout: 4 spread on sheet
-    Product orientation: VERTICAL
-    Worksheet runs: 6120
-    Pringint time: 1.354
-Printing cost: 4063.0
-Common sheets count: 3081
-TOTAL: 12499.0
+    operations: 4250550.0
+        folding: 3125550.0
+        cutting: 1125000.0
+    materials: 2.470311E7
+        form: 3040000.0
+        paper: 1.791111E7
+        chemicals: 3752000.0
+    Sheets on product: 1250.0
+    Printing on itself: NO.
+    Paper: 1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2
+    Paper count: 13492050
+    Paper cutting count: 650x457 (x1)
+    Optimal layout: 2 spread on sheet
+    Product orientation: HORIZONTAL
+    Worksheet runs: 26800000
+    Pringint time: 5028.571
+Printing cost: 1.5085715E7
+Common sheets count: 13492050
+TOTAL: 4.8805825E7

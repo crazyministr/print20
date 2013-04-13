@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product name="Eurobooklet" TOTAL="12499.0">
-  <operations total_cost="-">-</operations>
+<product name="Booklet (brace)" TOTAL="4.8805825E7">
+  <operations total_cost="4766450.0">
+    <binding total_cost="16200.0">16200.0</binding>
+    <selection total_cost="4750250.0">4750250.0</selection>
+  </operations>
   <materials total_cost="-">-</materials>
-  <spread_format>210x297</spread_format>
-  <format>210x99</format>
+  <spread_format>297x420</spread_format>
+  <format>297x210</format>
   <circulation>10000</circulation>
-  <weight>7.0</weight>
+  <weight>28066.0</weight>
   <parts>
     <block>
-      <operations total_cost="2450.0">
-        <folding total_cost="2150.0">2150.0</folding>
-        <cutting total_cost="300.0">300.0</cutting>
+      <operations total_cost="4250550.0">
+        <folding total_cost="3125550.0">3125550.0</folding>
+        <cutting total_cost="1125000.0">1125000.0</cutting>
       </operations>
-      <materials total_cost="5985.67">
-        <form total_cost="1216.0">1216.0</form>
-        <paper total_cost="3912.87">3912.87</paper>
-        <chemicals total_cost="856.8">856.8</chemicals>
+      <materials total_cost="2.470311E7">
+        <form total_cost="3040000.0">3040000.0</form>
+        <paper total_cost="1.791111E7">1.791111E7</paper>
+        <chemicals total_cost="3752000.0">3752000.0</chemicals>
       </materials>
       <machine>Heidelberg Speedmaster SM 74</machine>
-      <print_time>1.354</print_time>
-      <paper_count>3081</paper_count>
-      <cutting_sheet_format>620x457 (x1)</cutting_sheet_format>
-      <optimal_layout>4</optimal_layout>
-      <orientation>VERTICAL</orientation>
-      <paper>1270.0, Бумага 'ТомОтто' глянцевая, матовая 47*62, 90 г/м2</paper>
-      <sheets_on_product>0.25</sheets_on_product>
-      <worksheet_runs>6120</worksheet_runs>
-      <itself_printing>0.25 from 0.25</itself_printing>
+      <print_time>5028.571</print_time>
+      <paper_count>13492050</paper_count>
+      <cutting_sheet_format>650x457 (x1)</cutting_sheet_format>
+      <optimal_layout>2</optimal_layout>
+      <orientation>HORIZONTAL</orientation>
+      <paper>1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2</paper>
+      <sheets_on_product>1250.0</sheets_on_product>
+      <worksheet_runs>26800000</worksheet_runs>
+      <itself_printing />
     </block>
   </parts>
-  <printing>4063.0</printing>
-  <total_time>1.354</total_time>
-  <Total_paper_count>3081</Total_paper_count>
+  <printing>1.5085715E7</printing>
+  <total_time>5028.571</total_time>
+  <Total_paper_count>13492050</Total_paper_count>
 </product>
 
 
