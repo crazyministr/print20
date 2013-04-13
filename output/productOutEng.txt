@@ -1,0 +1,28 @@
+Product: Eurobooklet
+Format: 210x99
+Weight: 7.0
+Spread format: 210x297
+Circulation: 10000
+operations: -
+materials: -
+block
+    Printing machine: Heidelberg Speedmaster SM 74
+    operations: 2450.0
+        folding: 2150.0
+        cutting: 300.0
+    materials: 5985.67
+        form: 1216.0
+        paper: 3912.87
+        chemicals: 856.8
+    Sheets on product: 0.25
+    Printing on itself: YES. 0.25 from 0.25
+    Paper: 1270.0, Бумага 'ТомОтто' глянцевая, матовая 47*62, 90 г/м2
+    Paper count: 3081
+    Paper cutting count: 620x457 (x1)
+    Optimal layout: 4 spread on sheet
+    Product orientation: VERTICAL
+    Worksheet runs: 6120
+    Pringint time: 1.354
+Printing cost: 4063.0
+Common sheets count: 3081
+TOTAL: 12499.0

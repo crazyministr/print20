@@ -6,7 +6,7 @@
         public $formats; #array[string]
         public $is_folded, $is_bind, $type, $is_mono_picture; #bool
         public $pages_on_spread, $folding_count; #int
-//        public $operations; #array[array[]]
+        public $common_operations, $block_operations;
     
         function save_product($jsonProduct)
         {
@@ -21,6 +21,8 @@
             $this->bindingType = $jsonProduct['binding_type'];
             $this->pages_on_spread = $jsonProduct['pages_on_spread'];
             $this->folding_count = $jsonProduct['folding_count'];
+            $this->common_operations = $jsonProduct['common_operations'];
+            $this->block_operations = $jsonProduct['block_operations'];
         }
     }
     

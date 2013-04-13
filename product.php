@@ -10,7 +10,6 @@ class product {
         foreach ($post as $key => $value) {
             $this->data[$key] = $value;
         }
-        // var_dump($this->data['json-product']);
     }
 
     public function get_array() {
@@ -22,7 +21,7 @@ class product {
         $result['circulation'] = $this->data['circulation'];
 
         if (isset($this->data['format-height']) && isset($this->data['format-width'])) {
-            $result['format'] = $this->data['format-height'] . 'x' . $this->data['format-width'];
+            $result['format'] = $this->data['format-width'] . 'x' . $this->data['format-height'];
         } else {
             exit("Bug in the formats");
             $result['format'] = $this->data['format-product'];
@@ -51,20 +50,21 @@ class product {
                 'attrs' => $stamping_attrs
             );
         }
-
-        // folding
-        if ($this->data['json-product']['is_folded']) {
-            $result['operations']['folding'] = $this->data['json-product']['folding_count'];
-        }
-
+        
         // binding
         if ($this->data['json-product']['is_bind']) {
             $binding_attrs = array(
-                'type' => $this->data['json-product']['binding_type']
+                'type' => $this->data['json-product']['binding_type'],
+                'side' => 'long'
             );
             $result['operations']['binding'] = array(
                 'attrs' => $binding_attrs
             );
+        }
+        
+        // common operations
+        foreach ($this->data['json-product']['common_operations'] as $operation => $description) {
+            $result['operations'][$operation]['attrs'] = $description;
         }
 
         // tag parts -> block
@@ -73,18 +73,23 @@ class product {
         $result['parts']['block']['density'] = $this->data['density'];
 
         // tag parts -> materials        
-        $result['parts']['materials']['type'] = $this->data['type'];
-        $result['parts']['materials']['surface'] = $this->data['surface'];
+        $result['parts']['block']['materials']['type'] = $this->data['type'];
+        $result['parts']['block']['materials']['surface'] = $this->data['surface'];
 
         // tag parts -> operations
-        $result['parts']['operations'] = array();
+        $result['parts']['block']['operations'] = array();
 
+        // folding
+        if ($this->data['json-product']['is_folded']) {
+            $result['parts']['block']['operations']['folding'] = $this->data['json-product']['folding_count'];
+        }
+        
         // operation vd
         if ($this->data['vd'] != 'no') {
             $temp = explode(' ', $this->data['vd']);
             $vd_attrs['side'] = $temp[0];
             $vd_attrs['type'] = $temp[1];
-            $result['parts']['operations']['vd_varnishing'] = array(
+            $result['parts']['block']['operations']['vd_varnishing'] = array(
                 'attrs' => $vd_attrs
             );
         }
@@ -94,7 +99,7 @@ class product {
             $temp = explode(' ', $this->data['lamination']);
             $lamination_attrs['side'] = $temp[0];
             $lamination_attrs['type'] = $temp[1];
-            $result['parts']['operations']['lamination'] = array(
+            $result['parts']['block']['operations']['lamination'] = array(
                 'attrs' => $lamination_attrs
             );
         }
@@ -104,9 +109,13 @@ class product {
             $temp = explode(' ', $this->data['uf']);
             $uf_attrs['side'] = $temp[0];
             $uf_attrs['type'] = $temp[1];
-            $result['parts']['operations']['uf'] = array(
+            $result['parts']['block']['operations']['uf_varnishing'] = array(
                 'attrs' => $uf_attrs
             );
+        }
+        
+        foreach ($this->data['json-product']['block_operations'] as $operation => $description) {
+            $result['parts']['block']['operations'][$operation]['attrs'] = $description;
         }
 
         //tag parts -> cover
@@ -147,7 +156,7 @@ class product {
                 $temp = explode(' ', $this->data['cover-uf']);
                 $uf_attrs['side'] = $temp[0];
                 $uf_attrs['type'] = $temp[1];
-                $result['parts']['cover']['operations']['uf'] = array(
+                $result['parts']['cover']['operations']['uf_varnishing'] = array(
                     'attrs' => $uf_attrs
                 );
             }

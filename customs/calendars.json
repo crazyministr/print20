@@ -1,0 +1,19 @@
+Calendar TRIO econom" {
+        "name": "Calendar TRIO econom",
+        "spiegel_format" : "320x210",
+        "padding_format" : "320x180",
+        "block_format" : "300x140",
+        "padding_count" : 3,
+        "is_bind": true,
+        "binding_type" : "spring",
+        "is_calendar": true,
+        "operations" : {}        
+        
+        "folding_count": 0,
+        "is_folded": false,
+        "is_multipage": true,
+        "   ": false,
+        "pages_on_spread": 2,
+        "is_mono_picture": false,
+        "formats":[]        
+    }

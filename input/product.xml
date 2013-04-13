@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product name="Eurobooklet"><circulation>10000</circulation><format>210x99</format><operations/><parts><block><chromacity>4x4</chromacity><pages>6</pages><density>90</density><materials><type>paper</type><surface>matted</surface></materials><operations><folding>2</folding></operations></block></parts></product>

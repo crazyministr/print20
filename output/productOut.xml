@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product name="Eurobooklet" TOTAL="12499.0">
+  <operations total_cost="-">-</operations>
+  <materials total_cost="-">-</materials>
+  <spread_format>210x297</spread_format>
+  <format>210x99</format>
+  <circulation>10000</circulation>
+  <weight>7.0</weight>
+  <parts>
+    <block>
+      <operations total_cost="2450.0">
+        <folding total_cost="2150.0">2150.0</folding>
+        <cutting total_cost="300.0">300.0</cutting>
+      </operations>
+      <materials total_cost="5985.67">
+        <form total_cost="1216.0">1216.0</form>
+        <paper total_cost="3912.87">3912.87</paper>
+        <chemicals total_cost="856.8">856.8</chemicals>
+      </materials>
+      <machine>Heidelberg Speedmaster SM 74</machine>
+      <print_time>1.354</print_time>
+      <paper_count>3081</paper_count>
+      <cutting_sheet_format>620x457 (x1)</cutting_sheet_format>
+      <optimal_layout>4</optimal_layout>
+      <orientation>VERTICAL</orientation>
+      <paper>1270.0, Бумага 'ТомОтто' глянцевая, матовая 47*62, 90 г/м2</paper>
+      <sheets_on_product>0.25</sheets_on_product>
+      <worksheet_runs>6120</worksheet_runs>
+      <itself_printing>0.25 from 0.25</itself_printing>
+    </block>
+  </parts>
+  <printing>4063.0</printing>
+  <total_time>1.354</total_time>
+  <Total_paper_count>3081</Total_paper_count>
+</product>
+
+

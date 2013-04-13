@@ -1,40 +1,59 @@
-<?php
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Калькулятор</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/calc.js"></script>
 
-require_once 'product.php';
-require_once 'array_to_xml.php';
+        <link rel="stylesheet" href="css/bootstrap.min.css"  media="screen">
+        <link rel="stylesheet" href="css/bootstrap.css"  media="screen">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css"  media="screen">
 
-foreach ($_POST as $key => $value) {
-    $post[$key] = $value;
-}
+    </head>
+    <body>
+    <center>
+        <h2>Онлайн-калькулятор</h2>
+        <?php
+        require_once 'product.php';
+        require_once 'array_to_xml.php';
+        require_once 'execute_calc.php';
+        require_once 'save_product.php';
 
-echo "<table>";
-foreach ($post as $key => $value) {
-    echo "<tr><td>$key</td>&nbsp <td>$value</td></tr>";
-}
-echo "</table>";
-echo '<br>';
+        foreach ($_POST as $key => $value) {
+            $post[$key] = $value;
+//            echo $key . ' ' . $value . '<br>';
+        }
 
-$temp_str = $_POST['choose-product'];
-for ($i = 0; $i < strlen($temp_str); $i++)
-	if ($temp_str[$i] == '_')
-		$temp_str[$i] = ' ';
+        $temp_str = $_POST['choose-product'];
+        for ($i = 0; $i < strlen($temp_str); $i++)
+            if ($temp_str[$i] == '_')
+                $temp_str[$i] = ' ';
 
-$post['json-product'] = (array) $prod[$post['choose-product']];
-$post['choose-product'] = $temp_str;
+        $post['json-product'] = (array) $prod[$post['choose-product']];
 
-$product = new product($post);
+        $post['choose-product'] = $temp_str;
 
-$converter = new array_to_xml();
-$xml = $converter->convert($product->get_array());
+        $product = new product($post);
 
-$file_name = 'product.xml';
-if (is_writable($file_name)) {
-    $handle = fopen($file_name, 'w');
-    fwrite($handle, $xml);
-    fclose($handle);
-    echo '<a href="product.xml">Show Xml</a><br><br>';
-} else {
-    echo 'File ' . $file_name . ' is unavailable for write';
-}
-//var_dump($prod);
-?>
+        $converter = new array_to_xml();
+        $xml = $converter->convert($product->get_array());
+
+        $file_name = 'input/product.xml';
+        if (is_writable($file_name)) {
+            $handle = fopen($file_name, 'w');
+            fwrite($handle, $xml);
+            fclose($handle);
+            echo "<a href=" . $file_name . ">Show Xml</a><br><br>";
+            execute_calc("product");
+        } else {
+            echo 'File ' . $file_name . ' is unavailable for write';
+        }
+        ?>
+    </center>
+</form>
+</body>
+</html>
