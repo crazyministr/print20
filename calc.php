@@ -60,11 +60,9 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="format-product">Формат продукции:</label></div>
                         <div class="span3" id="div_format_product">                               
-                            <select name="format-product" id="format-product" style="width:170px; float:left;">
-                            </select>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="new_format" id="new_format" value="">
-                                Свой формат
+                            <select name="format-product" id="format-product" style="width:170px; float:left;"></select>
+                            <label class="checkbox">
+                                <input type="checkbox" name="new_format" id="new_format" value=""> Свой формат
                             </label>
                         </div>
                     </div>
@@ -295,6 +293,9 @@
                                         <option value="two matted">Двусторонний матовый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="choose_uf" id="choose_uf" value=""> Выборочный
+                                    </label>
                                 </div>
                             </div>
                     </div>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product name="Booklet (brace)"><circulation>10000</circulation><format>297x210</format><operations><binding type="brace" side="long"/></operations><parts><block><chromacity>4x4</chromacity><pages>10000</pages><density>90</density><materials><type>paper</type><surface>matted</surface></materials><operations/></block></parts></product>
+<product name="Booklet"><format>148rx105</format><operations/><parts><block><chromacity>4x4</chromacity><pages>4</pages><density>90</density><materials><type>paper</type><surface>matted</surface></materials><operations><folding>1</folding></operations></block></parts></product>

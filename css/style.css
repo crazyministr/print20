@@ -45,7 +45,7 @@
 /*------------ calc.html -----------*/
 #first-param, #second-param, #third-param, #fourth-param, #fifth-param, #sixth-param, #seventh-param{
 	border:1px solid #999;
-	border-radius:8px;
+	border-radius:20px;
 	padding:10px;
 	margin-top:10px;
 }
@@ -63,15 +63,15 @@
 }
 .help-calc{
 	float:left;
-	margin-right: 5px;
-	width: 24px;
+	margin-right: 1px;
+	width: 1px; /* отступ от края слева */
 }
 .help-calc a{
 	text-decoration:none;
 }
 #third-param label{
-	padding-top:5px;
-	padding-bottom:5px;
+	padding-top:50px;
+	padding-bottom:50px;
 }
 #seventh-param label{
 	padding:5px 0 5px 0;

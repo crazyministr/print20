@@ -25,11 +25,15 @@ $(document).ready(function() {
 
     // свой формат
     $('#new_format').change(function() {
-        if ($('#new_format').is(':checked')) {
+        if ($('#new_format').is(':checked'))
+        {
             $('#format-width, #format-height').removeAttr("disabled");
+            formatProduct.attr("disabled", "disabled");
         }
-        else {
+        else
+        {
             $('#format-width, #format-height').attr("disabled", "disabled");
+            formatProduct.removeAttr("disabled");
         }
     })
 
@@ -50,27 +54,8 @@ $(document).ready(function() {
             $('#format-height').val(product_height);
         }
         else
-            alert('Введите число');
+            alert('Неверный формат продукта');
     })
-
-    // // Поворачиваем продукт (меняем ширину и высоту в формате продукта) "чекбоксом"
-    // $('#turn').change(function(){
-    // 	var product_width = $('#format-width').val();
-    // 	var product_height = $('#format-height').val();
-
-    // 	// если значения ширины и высоты - числовые:
-    // 	if(($.isNumeric(product_width)) && ($.isNumeric(product_height))){
-    // 			var tmp = product_height;
-    // 			product_height = product_width;
-    // 			product_width = tmp;
-
-    // 			$('#format-width').val(product_width);
-    // 			$('#format-height').val(product_height);
-    // 		}
-    // 		else {
-    // 		alert('Введите число');
-    // 	}
-    // }) 
 
     // При изменении поля формат продукта меняем значения полей "ширина" и "высота"
 
@@ -98,12 +83,24 @@ $(document).ready(function() {
             $('.sixth').hide();
         });
 
+        if (x == 'Kubarik')
+        {
+            $('#material').load("update_material_product.php?ch=" + "disabled");
+            $('#density').load("update_kubarik_density.php?ch=" + 150);
+        }
+        else
+        {
+            $('#material').load("update_material_product.php?ch=" + "enabled");
+            $('#density').load("update_kubarik_density.php?ch=" + 1000);
+        }
+
         formatProduct.load("update_format_product.php?ch=" + x, function() {
             var product_format = $(this).val();
             var product_width = '';
             var product_height = '';
             var a = product_format.split('x');
-            if (($.isNumeric(a[0])) && ($.isNumeric(a[1]))) {
+            if (($.isNumeric(a[0])) && ($.isNumeric(a[1])))
+            {
                 $('#format-width').val(a[0]);
                 $('#format-height').val(a[1]);
             }
@@ -133,5 +130,7 @@ $(document).ready(function() {
         formatProduct.removeAttr('disabled');
         $('#format-width, #format-height').removeAttr('disabled');
         $('#pages').removeAttr('disabled');
+        if (!($.isNumeric($('#format-width'))) || !($.isNumeric($('#format-height'))))
+            alert("Неверный формат продукта");
     })
 })
