@@ -126,11 +126,23 @@ $(document).ready(function() {
     });
     material.change();
 
+    $('#choose_uf').change(function(){
+        if ($('#choose_uf').is(':checked'))
+        {
+            $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
+        }
+        else
+        {
+            $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
+        }        
+    })
+    $('#choose_uf').change();
+
     $('form').submit(function() {
         formatProduct.removeAttr('disabled');
         $('#format-width, #format-height').removeAttr('disabled');
         $('#pages').removeAttr('disabled');
-        if (!($.isNumeric($('#format-width'))) || !($.isNumeric($('#format-height'))))
-            alert("Неверный формат продукта");
+        // if (!($.isNumeric($('#format-width'))) || !($.isNumeric($('#format-height'))))
+        //     alert("Неверный формат продукта");
     })
 })

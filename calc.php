@@ -61,7 +61,7 @@
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="format-product">Формат продукции:</label></div>
                         <div class="span3" id="div_format_product">                               
                             <select name="format-product" id="format-product" style="width:170px; float:left;"></select>
-                            <label class="checkbox">
+                            <label class="checkbox" style="margin-left:16px;">
                                 <input type="checkbox" name="new_format" id="new_format" value=""> Свой формат
                             </label>
                         </div>
@@ -72,14 +72,14 @@
                         </div>
                         <div class="span2" style="width:162px; margin-left:10px;">
                             <label for="format-width">Ширина:</label>
-                            <input type="text" maxlength="6" name="format-width" id="format-width" style="width:50px" value="" disabled><p>мм</p>
+                            <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
                         </div>
                         <div class="span1" style="width:40px; margin-left:13px;" title="Повернуть">
                             <button class="btn" type="button" id="exchange"><i class="icon-exchange icon-1.5x"></i></button>
                         </div>
                         <div class="span2" style="width:158px; margin-left:13px;">
                             <label for="format-height">Высота:</label>
-                            <input type="text" maxlength="6" name="format-height" id="format-height" style="width:50px" value="" disabled><p>мм</p>
+                            <input type="text" maxlength="3" name="format-height" id="format-height" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
                         </div>
                     </div>
                     <!--
@@ -293,7 +293,7 @@
                                         <option value="two matted">Двусторонний матовый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
-                                    <label class="checkbox">
+                                    <label class="checkbox" style="margin-left:16px;">
                                         <input type="checkbox" name="choose_uf" id="choose_uf" value=""> Выборочный
                                     </label>
                                 </div>
@@ -361,7 +361,7 @@
                                 <div class="span2" style="width:150px; margin-left:10px;">
                                     <label for="impression-width">Тиснение:</label>
                                 </div>
-                                <div class="span3">
+                                <div class="span3" id="impression">
                                     <input type="text" maxlength="6" name="impression-width" id="impression-width" style="width:35px"><p>x</p>
                                     <input type="text" maxlength="6" name="impression-height" id="impression-height" style="width:35px"><p>см</p>
                                     <input type="text" maxlength="6" name="impression-times" id="impression-times" style="width:30px"><p>раз на продукт</p>
@@ -385,8 +385,9 @@
             </div>
         </div>
     </div>
+    <br>
     <center>
-        <input type="submit" value="Calculate">
+        <input class="btn btn-primary" type="submit" value="Calculate">
     </center>
     </form>
   </body>
