@@ -179,8 +179,8 @@
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="glossy">Выберите покрытие:</label></div>
                         <div class="span3">                               
                             <select name="surface" id="surface" style="width:180px; float:left;">
-                                <option value="matted">Матовое</option>
-                                <option value="glossy">Глянцевое</option>
+                                <option value="matted">Матовая</option>
+                                <option value="glossy">Глянцевая</option>
                             </select>
                         </div>
                     </div>
@@ -227,8 +227,8 @@
                     <div class="row">
                         <div class="span3">
                             <select name="cover-surface" id="cover-glossy" style="width:170px;">
-                                <option value="matted">Матовое</option>
-                                <option value="glossy">Глянцевое</option>
+                                <option value="matted">Матовая</option>
+                                <option value="glossy">Глянцевая</option>
                             </select>
                         </div>
                     </div>
@@ -260,8 +260,10 @@
                                         <option value="no">Не покрывать</option>
                                         <option value="one matted">Односторонний матовый</option>
                                         <option value="one glossy">Односторонний глянцевый</option>
+                                        <option value="one offset">Односторонний офсетный</option>
                                         <option value="two matted">Двусторонний матовый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
+                                        <option value="two offset">Двусторонний офсетный</option>
                                     </select>
                                 </div>
                             </div>
