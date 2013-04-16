@@ -108,6 +108,12 @@ $(document).ready(function() {
     material.change(function() {
         var x = material.val();
         $('#density').load("update_density.php?ch=" + x);
+        $('#surface').load("update_surface.php?ch=" + x, function(){
+            if (x != 'paper')
+                $('#surface').attr('disabled', 'disabled');
+            else
+                $('#surface').removeAttr('disabled');
+        });
     });
     material.change();
 

@@ -178,7 +178,7 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="glossy">Выберите покрытие:</label></div>
                         <div class="span3">                               
-                            <select name="surface" id="glossy" style="width:180px; float:left;">
+                            <select name="surface" id="surface" style="width:180px; float:left;">
                                 <option value="matted">Матовое</option>
                                 <option value="glossy">Глянцевое</option>
                             </select>
