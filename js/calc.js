@@ -23,21 +23,6 @@ $(document).ready(function() {
 
     _cover();
 
-    // свой формат
-    $('#new_format').change(function() {
-        if ($('#new_format').is(':checked'))
-        {
-            $('#format-width, #format-height').removeAttr("disabled");
-            formatProduct.attr("disabled", "disabled");
-        }
-        else
-        {
-            $('#format-width, #format-height').attr("disabled", "disabled");
-            formatProduct.removeAttr("disabled");
-        }
-    })
-
-
     // Поворачиваем продукт (меняем ширину и высоту в формате продукта) "кнопкой"
     $('#exchange').click(function() {
         var product_width = $('#format-width').val();
@@ -126,15 +111,26 @@ $(document).ready(function() {
     });
     material.change();
 
-    $('#choose_uf').change(function(){
-        if ($('#choose_uf').is(':checked'))
+    // свой формат
+    $('#new_format').change(function() {
+        if ($('#new_format').is(':checked'))
         {
-            $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
+            $('#format-width, #format-height').removeAttr("disabled");
+            formatProduct.attr("disabled", "disabled");
         }
         else
         {
+            $('#format-width, #format-height').attr("disabled", "disabled");
+            formatProduct.removeAttr("disabled");
+            chooseProduct.change();
+        }
+    })
+
+    $('#choose_uf').change(function(){
+        if ($('#choose_uf').is(':checked'))
+            $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
+        else
             $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
-        }        
     })
     $('#choose_uf').change();
 
@@ -142,7 +138,6 @@ $(document).ready(function() {
         formatProduct.removeAttr('disabled');
         $('#format-width, #format-height').removeAttr('disabled');
         $('#pages').removeAttr('disabled');
-        // if (!($.isNumeric($('#format-width'))) || !($.isNumeric($('#format-height'))))
-        //     alert("Неверный формат продукта");
+        $('#cover-pages').removeAttr('disabled');
     })
 })

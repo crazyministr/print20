@@ -51,7 +51,7 @@
                             <label for="circulation">Тираж:</label>
                         </div>
                         <div class="span3">
-                            <input name="circulation" type="text" maxlength="8" id="circulation" style="width:157px;"><p>шт.</p>
+                            <input name="circulation" type="text" maxlength="8" id="circulation" style="width:157px;" pattern="^[0-9]+$"><p>шт.</p>
                         </div>
                     </div>
                     <div class="row">
@@ -70,15 +70,15 @@
                         <div class="span1 help-calc">
                             <!-- <a href="#format-params"><i class="icon-question-sign icon-2x"></i></a> -->
                         </div>
-                        <div class="span2" style="width:162px; margin-left:10px;">
-                            <label for="format-width">Ширина:</label>
+                        <div class="span2" style="width:158px; margin-left:10px;">
+                            <label for="format-width">Высота:</label>
                             <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
                         </div>
-                        <div class="span1" style="width:40px; margin-left:13px;" title="Повернуть">
+                        <div class="span1" style="width:40px; margin-left:10px;" title="Повернуть">
                             <button class="btn" type="button" id="exchange"><i class="icon-exchange icon-1.5x"></i></button>
                         </div>
-                        <div class="span2" style="width:158px; margin-left:13px;">
-                            <label for="format-height">Высота:</label>
+                        <div class="span2" style="width:162px; margin-left:13px;">
+                            <label for="format-height">Ширина:</label>
                             <input type="text" maxlength="3" name="format-height" id="format-height" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="pages">Количество полос:</label></div>
                         <div class="span3" id="page">
-                            <input type="text" maxlength="6" name="pages" id="pages" style="width:157px"><p>шт.</p>
+                            <input type="text" maxlength="6" name="pages" id="pages" style="width:167px">
                         </div>
                     </div>
                     <div class="row">
@@ -150,7 +150,7 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="chromacity">Цветность:</label></div>
                         <div class="span3">
-                            <select name="chromacity" id="chromacity" style="width:170px; float:left;">
+                            <select name="chromacity" id="chromacity" style="width:180px; float:left;">
                                 <option value="4x4">4x4</option>
                                 <option value="4x1">4x1</option>
                                 <option value="4x0">4x0</option>
@@ -165,10 +165,10 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="material">Выберите материал:</label></div>
                         <div class="span3">
-                            <select name="type" id="material" style="width:170px; float:left;">
-                                <option value="paper">Бумага</option>
+                            <select name="type" id="material" style="width:180px; float:left;">
+                                <option value="paper">Мелованная бумага</option>
                                 <option value="carton">Картон</option>
-                                <option value="offset">Оффсет</option>
+                                <option value="offset">Офсетная бумага</option>
                             </select>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="glossy">Выберите покрытие:</label></div>
                         <div class="span3">                               
-                            <select name="surface" id="glossy" style="width:170px; float:left;">
+                            <select name="surface" id="glossy" style="width:180px; float:left;">
                                 <option value="matted">Матовое</option>
                                 <option value="glossy">Глянцевое</option>
                             </select>
@@ -190,7 +190,7 @@
                         </div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="density">Плотность:</label></div>
                         <div class="span3">
-                            <select name="density" id="density" style="width:170px; float:left;">
+                            <select name="density" id="density" style="width:180px; float:left;">
                                 <option value="90">90</option>
                                 <option value="100">100</option>
                                 <option value="210">210</option>
@@ -202,7 +202,7 @@
             <div class="span3 fourth" style="display:none;" id="fourth-param">
                 <p style="text-align:center; font-weight:bold;">Обложка</p>
                     <div class="row">
-                        <div class="span3"><input type="text" maxlength="6" id="cover-pages" style="width:157px"><p>шт.</p></div> 
+                        <div class="span3"><input type="text" maxlength="6" name="cover-pages" id="cover-pages" style="width:157px" value="4" disabled></div> 
                     </div>
                     <div class="row">
                         <div class="span3">
@@ -218,9 +218,9 @@
                     <div class="row">
                         <div class="span3">
                             <select name="cover-type" id="cover-material" style="width:170px;">
-                                <option value="paper">Бумага</option>
+                                <option value="paper">Мелованная бумага</option>
                                 <option value="carton">Картон</option>
-                                <option value="offset">Оффсет</option>
+                                <option value="offset">Офсетная бумага</option>
                             </select>
                         </div>    
                     </div>
@@ -273,10 +273,10 @@
                                 <div class="span3">
                                     <select name="lamination" id="lamination" style="width:170px;">
                                         <option value="no">Без ламинации</option>
-                                        <option value="one matted">Односторонний матовый</option>
-                                        <option value="one glossy">Односторонний глянцевый</option>
-                                        <option value="two matted">Двусторонний матовый</option>
-                                        <option value="two glossy">Двусторонний глянцевый</option>
+                                        <option value="one matted">Односторонняя матовая</option>
+                                        <option value="one glossy">Односторонняя глянцевая</option>
+                                        <option value="two matted">Двусторонняя матовая</option>
+                                        <option value="two glossy">Двусторонняя глянцевая</option>
                                     </select>
                                 </div>
                             </div>
@@ -288,9 +288,7 @@
                                 <div class="span3">
                                     <select name="uf" id="uf" style="width:170px;">
                                         <option value="no">Не покрывать</option>
-                                        <option value="one matted">Односторонний матовый</option>
                                         <option value="one glossy">Односторонний глянцевый</option>
-                                        <option value="two matted">Двусторонний матовый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
                                     <label class="checkbox" style="margin-left:16px;">
@@ -316,10 +314,10 @@
                                 <div class="span3">
                                     <select name="cover-lamination" id="cover-lamination" style="width:170px;">
                                         <option value="no">Без ламинации</option>
-                                        <option value="one matted">Односторонний матовый</option>
-                                        <option value="one glossy">Односторонний глянцевый</option>
-                                        <option value="two matted">Двусторонний матовый</option>
-                                        <option value="two glossy">Двусторонний глянцевый</option>
+                                        <option value="one matted">Односторонняя матовая</option>
+                                        <option value="one glossy">Односторонняя глянцевая</option>
+                                        <option value="two matted">Двусторонняя матовая</option>
+                                        <option value="two glossy">Двусторонняя глянцевая</option>
                                     </select>
                                 </div>
                             </div>
@@ -327,9 +325,7 @@
                                 <div class="span3">
                                     <select name="cover-uf" id="cover-uf" style="width:170px;">
                                         <option value="no">Не покрывать</option>
-                                        <option value="one matted">Односторонний матовый</option>
                                         <option value="one glossy">Односторонний глянцевый</option>
-                                        <option value="two matted">Двусторонний матовый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
                                 </div>
