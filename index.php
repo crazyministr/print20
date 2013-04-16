@@ -63,7 +63,6 @@
         ?>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <button>result</button>
         <table>
             <?php
             $handle = fopen('output/productOutRus.txt', 'r');
@@ -73,12 +72,6 @@
             fclose($handle);
             ?>
         </table>
-        <script>
-            $("button").click(function() {
-                $("table").slideToggle("slow");
-            });
-
-        </script>
     </center>
 </form>
 </body>
