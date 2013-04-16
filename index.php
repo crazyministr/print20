@@ -44,23 +44,41 @@
         $xml = $converter->convert($product->get_array());
 
         $file_name = 'input/product.xml';
-        if (is_writable($file_name)) {
-            $handle = fopen($file_name, 'w');
-            fwrite($handle, $xml);
-            fclose($handle);
-            echo "<a href=" . $file_name . ">input Xml</a><br><br>";
-            echo "<a href=output/productOut.xml>output Xml</a><br><br>";
-            execute_calc("product");
-            $handle = fopen('output/productOut.xml', 'r');
-            $productOut = '';
-            while (!feof($handle)) {
-                $productOut .= fgets($handle);
-            }
-            fclose($handle);            
-        } else {
-            echo 'File ' . $file_name . ' is unavailable for write';
+        if (!is_writable($file_name)) {
+            exit('File ' . $file_name . ' is unavailable for write');
         }
+        $handle = fopen($file_name, 'w');
+        fwrite($handle, $xml);
+        fclose($handle);
+        $report_calc = execute_calc("product");
+        $handle = fopen('output/productOut.xml', 'r');
+        $productOut = '';
+        while (!feof($handle)) {
+            $productOut .= fgets($handle);
+        }
+        fclose($handle);
+        $result_cost = xml2array($productOut);
+        echo "<a href=" . $file_name . ">input Xml</a><br><br>";
+        echo "<a href=output/productOut.xml>output Xml</a><br><br>";
         ?>
+
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <button>result</button>
+        <table>
+            <?php
+            $handle = fopen('output/productOutRus.txt', 'r');
+            while (!feof($handle)) {
+                echo '<tr><td>' . fgets($handle) . '</td></tr>';
+            }
+            fclose($handle);
+            ?>
+        </table>
+        <script>
+            $("button").click(function() {
+                $("table").slideToggle("slow");
+            });
+
+        </script>
     </center>
 </form>
 </body>
