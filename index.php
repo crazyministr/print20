@@ -22,6 +22,7 @@
         require_once 'array_to_xml.php';
         require_once 'execute_calc.php';
         require_once 'save_product.php';
+        require_once 'xml2array.php';
 
         foreach ($_POST as $key => $value) {
             $post[$key] = $value;
@@ -47,8 +48,15 @@
             $handle = fopen($file_name, 'w');
             fwrite($handle, $xml);
             fclose($handle);
-            echo "<a href=" . $file_name . ">Show Xml</a><br><br>";
+            echo "<a href=" . $file_name . ">input Xml</a><br><br>";
+            echo "<a href=output/productOut.xml>output Xml</a><br><br>";
             execute_calc("product");
+            $handle = fopen('output/productOut.xml', 'r');
+            $productOut = '';
+            while (!feof($handle)) {
+                $productOut .= fgets($handle);
+            }
+            fclose($handle);            
         } else {
             echo 'File ' . $file_name . ' is unavailable for write';
         }
