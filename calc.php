@@ -25,86 +25,66 @@
         <div class="row">
             <div class="span9" style="text-align:center;">
                 <h2>Онлайн-калькулятор</h2>
+                <label class="checkbox" id="checkbox"></label>
             </div>
         </div>
         <div class="row">
             <div class="span6" id="first-param">
-                    <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#product"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
-                        <div class="span2" style="width:150px; margin-left:10px;"><label for="choose-product">Выберите продукт:</label></div>
-                        <div class="span3">
-                            <select name="choose-product" id="choose-product" style="width:170px; float:left;">
-                                <?php
-                                    foreach ($prod as $key => $value)
-                                        echo "<option value=".$key.">".$value->name_ru."</option>";
-                                ?>
-                            </select>
-                        </div>
+                <div class="row">
+                    <div class="span1 help-calc">
+                        <!-- <a href="#product"><i class="icon-question-sign icon-2x"></i></a> -->
                     </div>
-                    <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#circulation"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
-                        <div class="span2" style="width:150px; margin-left:10px;">
-                            <label for="circulation">Тираж:</label>
-                        </div>
-                        <div class="span3">
-                            <input name="circulation" type="text" maxlength="8" id="circulation" style="width:157px;" pattern="^[0-9]+$"><p>шт.</p>
-                        </div>
+                    <div class="span2" style="width:150px; margin-left:10px;"><label for="choose-product">Выберите продукт:</label></div>
+                    <div class="span3">
+                        <select name="choose-product" id="choose-product" style="width:170px; float:left;">
+                            <?php
+                                foreach ($prod as $key => $value)
+                                    echo "<option value=".$key.">".$key."</option>";
+                            ?>
+                        </select>
                     </div>
-                    <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#format-product"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
-                        <div class="span2" style="width:150px; margin-left:10px;"><label for="format-product">Формат продукции:</label></div>
-                        <div class="span3" id="div_format_product">                               
-                            <select name="format-product" id="format-product" style="width:170px; float:left;"></select>
-                            <label class="checkbox" style="margin-left:16px;">
-                                <input type="checkbox" name="new_format" id="new_format" value=""> Свой формат
-                            </label>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="span1 help-calc">
+                        <!-- <a href="#circulation"><i class="icon-question-sign icon-2x"></i></a> -->
                     </div>
-                    <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#format-params"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
-                        <div class="span2" style="width:158px; margin-left:10px;">
-                            <label for="format-width">Высота:</label>
-                            <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
-                        </div>
-                        <div class="span1" style="width:40px; margin-left:10px;" title="Повернуть">
-                            <button class="btn" type="button" id="exchange"><i class="icon-exchange icon-1.5x"></i></button>
-                        </div>
-                        <div class="span2" style="width:162px; margin-left:13px;">
-                            <label for="format-height">Ширина:</label>
-                            <input type="text" maxlength="3" name="format-height" id="format-height" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
-                        </div>
+                    <div class="span2" style="width:150px; margin-left:10px;">
+                        <label for="circulation">Тираж:</label>
                     </div>
-                    <!--
-                    <div class="row">
-                        <div class="span1 help-calc">
-                            <a href="#ready"><i class="icon-question-sign icon-2x"></i></a>
-                        </div>
-                        <div class="span2"><label for="ready">Время готовности:</label></div>
-                        <div class="span3">                               
-                            <label class="radio" style="width:76px">
-                                <input type="radio" form="first-param" name="ready" id="optionsRadios1" value="48">
-                              48 часов
-                            </label>
-                            <label class="radio" style="width:68px">
-                                <input type="radio" form="first-param" name="ready" id="optionsRadios2" value="24">
-                              24 часа
-                            </label>
-                            <label class="radio" style="width:45px">
-                                <input type="radio" form="first-param" name="ready" id="optionsRadios3" value="4">
-                              4 часа
-                            </label>
-                        </div>    
-                    </div>-->
+                    <div class="span3">
+                        <input name="circulation" type="text" maxlength="8" id="circulation" style="width:157px;" pattern="^[0-9]+$"><p>шт.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span1 help-calc">
+                        <!-- <a href="#format-product"><i class="icon-question-sign icon-2x"></i></a> -->
+                    </div>
+                    <div class="span2" style="width:150px; margin-left:10px;"><label for="format-product">Формат продукции:</label></div>
+                    <div class="span3" id="div_format_product">                               
+                        <select name="format-product" id="format-product" style="width:170px; float:left;"></select>
+                        <label class="checkbox" style="margin-left:16px;">
+                            <input type="checkbox" name="new_format" id="new_format" value=""> Свой формат
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span1 help-calc">
+                        <!-- <a href="#format-params"><i class="icon-question-sign icon-2x"></i></a> -->
+                    </div>
+                    <div class="span2" style="width:158px; margin-left:10px;">
+                        <label for="format-width">Высота:</label>
+                        <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
+                    </div>
+                    <div class="span1" style="width:40px; margin-left:10px;" title="Повернуть">
+                        <button class="btn" type="button" id="exchange"><i class="icon-exchange icon-1.5x"></i></button>
+                    </div>
+                    <div class="span2" style="width:162px; margin-left:13px;">
+                        <label for="format-height">Ширина:</label>
+                        <input type="text" maxlength="3" name="format-height" id="format-height" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
+                    </div>
+                </div>
             </div>
-            <div class="span3" id="third-param">
+<!--             <div class="span3" id="third-param">
                     <div class="row">
                         <div class="span3">
                             <label class="checkbox" id="checkbox"></label>
@@ -114,20 +94,15 @@
                         <div class="span3"><p style="padding:8px;">&nbsp </p>
                         </div>    
                     </div>
-                    <div class="row">
-                        <div class="span3">
-<!--                             <label class="checkbox">
-                                <input type="checkbox" name="turn" id="turn" value="">
-                                Повернуть?
-                            </label>
- -->                        </div>
+                    <div class="row"> 
+                        <div class="span3"> </div>
                     </div>
                     <div class="row">
                         <div class="span3"><p style="padding:7px;">&nbsp </p>
                         </div>
                     </div>
             </div>
-        </div>
+ -->        </div>
         <div class="row">
             <div class="span6" id="second-param">
                 <div class="row">

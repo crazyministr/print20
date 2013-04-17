@@ -2,26 +2,27 @@ $(document).ready(function() {
     var chooseProduct = $('#choose-product');
     var formatProduct = $('#format-product');
     var material = $('#material');
+    var predV = 0;
 
     //скрываем раскрываем блок рассчета обложки
-    var _cover = function()
-    {
-        $('#cover').change(function() {
-            if ($('#cover').is(':checked')) {
-                $('.postprint').toggleClass("span6");
-                $('.postprint').toggleClass("span10");
-                $('.fourth').show();
-                $('.sixth').show();
-            } else {
-                $('.postprint').toggleClass("span6");
-                $('.postprint').toggleClass("span10");
-                $('.fourth').hide();
-                $('.sixth').hide();
-            }
-        })
-    }
+    // var _cover = function()
+    // {
+    //     $('#cover').change(function() {
+    //         if ($('#cover').is(':checked')) {
+    //             $('.postprint').toggleClass("span6");
+    //             $('.postprint').toggleClass("span10");
+    //             $('.fourth').show();
+    //             $('.sixth').show();
+    //         } else {
+    //             $('.postprint').toggleClass("span6");
+    //             $('.postprint').toggleClass("span10");
+    //             $('.fourth').hide();
+    //             $('.sixth').hide();
+    //         }
+    //     })
+    // }
 
-    _cover();
+    // _cover();
 
     // Поворачиваем продукт (меняем ширину и высоту в формате продукта) "кнопкой"
     $('#exchange').click(function() {
@@ -63,9 +64,25 @@ $(document).ready(function() {
     chooseProduct.change(function() {
         var x = chooseProduct.val();
         $('#checkbox').load("update_cover.php?ch=" + x, function() {
-            _cover();
-            $('.fourth').hide();
-            $('.sixth').hide();
+            var v = $('#cover').val();
+            if (v == 1)
+                alert("ВНИМАНИЕ! СКРЕПЛЕНИЕ ПРОИЗВОДИТЬСЯ ПО ВЫСОТЕ");
+
+            if (v == 1 && predV != v)
+            {
+                $('.postprint').toggleClass("span6");
+                $('.postprint').toggleClass("span10");
+                $('.fourth').show();
+                $('.sixth').show();
+            }
+            else if (predV != v)
+            {
+                $('.postprint').toggleClass("span6");
+                $('.postprint').toggleClass("span10");
+                $('.fourth').hide();
+                $('.sixth').hide();
+            }
+            predV = v;
         });
 
         if (x == 'Kubarik')
@@ -145,5 +162,23 @@ $(document).ready(function() {
         $('#format-width, #format-height').removeAttr('disabled');
         $('#pages').removeAttr('disabled');
         $('#cover-pages').removeAttr('disabled');
+
+        var v = document.forms[0].pages.value;
+        var x = chooseProduct.val();
+        if (v == 0 || v % 2 != 0)
+        {
+            if (v == 0)
+                alert("Количество полос в блоке должно быть больше нуля");
+            else
+            {
+                if (x == "Booklet_(brace)")
+                    alert("Количество полос в блоке данного продукта должно быть кратно четырём");
+                else
+                    alert("Количество полос в блоке данного продукта должно быть кратно двум");
+            }
+            document.forms[0].pages.focus();
+            return false;
+        }
+        return true;
     })
 })

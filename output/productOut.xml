@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product name="Booklet" TOTAL="4507.0">
-  <operations total_cost="-">-</operations>
+<product name="Booklet (brace)" TOTAL="700.0">
+  <operations total_cost="500.0">
+    <binding total_cost="500.0">500.0</binding>
+  </operations>
   <materials total_cost="-">-</materials>
-  <spread_format>148x210</spread_format>
-  <format>148x105</format>
-  <circulation>1000</circulation>
-  <weight>2.0</weight>
+  <spread_format>297x420</spread_format>
+  <format>297x210</format>
+  <circulation>0</circulation>
+  <weight>44.0</weight>
   <parts>
     <block>
-      <operations total_cost="580.0">
-        <folding total_cost="550.0">550.0</folding>
-        <cutting total_cost="30.0">30.0</cutting>
+      <operations total_cost="0.0">
+        <cutting total_cost="0.0">0.0</cutting>
       </operations>
-      <materials total_cost="926.5">
-        <form total_cost="624.0">624.0</form>
-        <paper total_cost="250.7">250.7</paper>
-        <chemicals total_cost="51.8">51.8</chemicals>
+      <materials total_cost="0.0">
+        <paper total_cost="0.0">0.0</paper>
       </materials>
-      <machine>Heidelberg Speedmaster SM 52</machine>
-      <print_time>0.307</print_time>
-      <paper_count>188</paper_count>
-      <cutting_sheet_format>470x315 (x2)</cutting_sheet_format>
-      <optimal_layout>4</optimal_layout>
+      <machine>Digital printer</machine>
+      <print_time>0.0</print_time>
+      <paper_count>20</paper_count>
+      <cutting_sheet_format>520x350 (x4)</cutting_sheet_format>
+      <optimal_layout>1</optimal_layout>
       <orientation>VERTICAL</orientation>
-      <paper>1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2</paper>
-      <sheets_on_product>0.25</sheets_on_product>
-      <worksheet_runs>740</worksheet_runs>
-      <itself_printing>0.25 from 0.25</itself_printing>
+      <paper>3270.0, Бумага 'ТомОтто' глянцевая, матовая 72*104, 90 г/м2</paper>
+      <sheets_on_product>4.0</sheets_on_product>
+      <worksheet_runs>0</worksheet_runs>
+      <itself_printing />
     </block>
   </parts>
-  <printing>3000.0</printing>
-  <total_time>0.307</total_time>
-  <Total_paper_count>188</Total_paper_count>
+  <printing>200.0</printing>
+  <total_time>0.0</total_time>
+  <Total_paper_count>20</Total_paper_count>
 </product>
 
 
