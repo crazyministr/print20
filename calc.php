@@ -241,8 +241,10 @@
                                         <option value="no">Не покрывать</option>
                                         <option value="one matted">Односторонний матовый</option>
                                         <option value="one glossy">Односторонний глянцевый</option>
+                                        <option value="one offset">Односторонний офсетный</option>
                                         <option value="two matted">Двусторонний матовый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
+                                        <option value="two offset">Двусторонний офсетный</option>
                                     </select>
                                 </div>    
                             </div>
