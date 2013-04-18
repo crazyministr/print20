@@ -39,7 +39,7 @@
                         <select name="choose-product" id="choose-product" style="width:170px; float:left;">
                             <?php
                                 foreach ($prod as $key => $value)
-                                    echo "<option value=".$key.">".$key."</option>";
+                                    echo "<option value=".$key.">".$value->nama_ru."</option>";
                             ?>
                         </select>
                     </div>
