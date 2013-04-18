@@ -4,26 +4,6 @@ $(document).ready(function() {
     var material = $('#material');
     var predV = 0;
 
-    //скрываем раскрываем блок рассчета обложки
-    // var _cover = function()
-    // {
-    //     $('#cover').change(function() {
-    //         if ($('#cover').is(':checked')) {
-    //             $('.postprint').toggleClass("span6");
-    //             $('.postprint').toggleClass("span10");
-    //             $('.fourth').show();
-    //             $('.sixth').show();
-    //         } else {
-    //             $('.postprint').toggleClass("span6");
-    //             $('.postprint').toggleClass("span10");
-    //             $('.fourth').hide();
-    //             $('.sixth').hide();
-    //         }
-    //     })
-    // }
-
-    // _cover();
-
     // Поворачиваем продукт (меняем ширину и высоту в формате продукта) "кнопкой"
     $('#exchange').click(function() {
         var product_width = $('#format-width').val();
@@ -146,8 +126,41 @@ $(document).ready(function() {
             $('#format-width, #format-height').attr("disabled", "disabled");
             formatProduct.removeAttr("disabled");
             formatProduct.change();
+            _upd_formats();
         }
     })
+
+    $('#lamination').change(function() {
+        var v = $(this).val();
+        var a = v.split(' ');
+        if (a[0] != 'no' && a[1] == 'glossy')
+        {
+            $('#uf').attr('disabled', 'disabled');
+            $('#choose_uf').attr('disabled', 'disabled');
+            $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
+        }
+        else
+        {
+            $('#uf').removeAttr('disabled');
+            $('#choose_uf').removeAttr('disabled');
+            $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
+        }
+    });
+
+    $('#cover-lamination').change(function() {
+        var v = $(this).val();
+        var a = v.split(' ');
+        if (a[0] != 'no' && a[1] == 'glossy')
+        {
+            $('#cover-uf').attr('disabled', 'disabled');
+            $('#choose_cover-uf').attr('disabled', 'disabled');
+        }
+        else
+        {
+            $('#cover-uf').removeAttr('disabled');
+            $('#choose_cover-uf').removeAttr('disabled');
+        }
+    });
 
     $('#choose_uf').change(function(){
         if ($('#choose_uf').is(':checked'))

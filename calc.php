@@ -31,9 +31,7 @@
         <div class="row">
             <div class="span6" id="first-param">
                 <div class="row">
-                    <div class="span1 help-calc">
-                        <!-- <a href="#product"><i class="icon-question-sign icon-2x"></i></a> -->
-                    </div>
+                    <div class="span1 help-calc"></div>
                     <div class="span2" style="width:150px; margin-left:10px;"><label for="choose-product">Выберите продукт:</label></div>
                     <div class="span3">
                         <select name="choose-product" id="choose-product" style="width:170px; float:left;">
@@ -45,9 +43,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span1 help-calc">
-                        <!-- <a href="#circulation"><i class="icon-question-sign icon-2x"></i></a> -->
-                    </div>
+                    <div class="span1 help-calc"></div>
                     <div class="span2" style="width:150px; margin-left:10px;">
                         <label for="circulation">Тираж:</label>
                     </div>
@@ -56,9 +52,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span1 help-calc">
-                        <!-- <a href="#format-product"><i class="icon-question-sign icon-2x"></i></a> -->
-                    </div>
+                    <div class="span1 help-calc"></div>
                     <div class="span2" style="width:150px; margin-left:10px;"><label for="format-product">Формат продукции:</label></div>
                     <div class="span3" id="div_format_product">                               
                         <select name="format-product" id="format-product" style="width:170px; float:left;"></select>
@@ -68,9 +62,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="span1 help-calc">
-                        <!-- <a href="#format-params"><i class="icon-question-sign icon-2x"></i></a> -->
-                    </div>
+                    <div class="span1 help-calc"></div>
                     <div class="span2" style="width:158px; margin-left:10px;">
                         <label for="format-width">Высота:</label>
                         <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
@@ -84,25 +76,7 @@
                     </div>
                 </div>
             </div>
-<!--             <div class="span3" id="third-param">
-                    <div class="row">
-                        <div class="span3">
-                            <label class="checkbox" id="checkbox"></label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="span3"><p style="padding:8px;">&nbsp </p>
-                        </div>    
-                    </div>
-                    <div class="row"> 
-                        <div class="span3"> </div>
-                    </div>
-                    <div class="row">
-                        <div class="span3"><p style="padding:7px;">&nbsp </p>
-                        </div>
-                    </div>
-            </div>
- -->        </div>
+        </div>
         <div class="row">
             <div class="span6" id="second-param">
                 <div class="row">
@@ -111,18 +85,14 @@
                     </div>
                 </div>
                     <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#pages"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
+                        <div class="span1 help-calc"></div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="pages">Количество полос:</label></div>
                         <div class="span3" id="page">
                             <input type="text" maxlength="6" name="pages" id="pages" style="width:167px">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#chromacity"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
+                        <div class="span1 help-calc"></div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="chromacity">Цветность:</label></div>
                         <div class="span3">
                             <select name="chromacity" id="chromacity" style="width:180px; float:left;">
@@ -135,9 +105,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#material"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
+                        <div class="span1 help-calc"></div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="material">Выберите материал:</label></div>
                         <div class="span3">
                             <select name="type" id="material" style="width:180px; float:left;">
@@ -148,9 +116,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#glossy"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
+                        <div class="span1 help-calc"></div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="glossy">Выберите покрытие:</label></div>
                         <div class="span3">                               
                             <select name="surface" id="surface" style="width:180px; float:left;">
@@ -160,9 +126,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="span1 help-calc">
-                            <!-- <a href="#density"><i class="icon-question-sign icon-2x"></i></a> -->
-                        </div>
+                        <div class="span1 help-calc"></div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="density">Плотность:</label></div>
                         <div class="span3">
                             <select name="density" id="density" style="width:180px; float:left;">
@@ -227,7 +191,6 @@
                         <p style="text-align:center; font-weight:bold;">Продукт</p>
                             <div class="row">
                                 <div class="span1 help-calc">
-                                    <!-- <a href="#vd"><i class="icon-question-sign icon-2x"></i></a> -->
                                 </div>
                                 <div class="span2" style="width:150px; margin-left:10px;"><label for="vd">Покрытие ВД-лаком:</label></div>
                                 <div class="span3">
@@ -243,9 +206,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="span1 help-calc">
-                                    <!-- <a href="#lamination"><i class="icon-question-sign icon-2x"></i></a> -->
-                                </div>
+                                <div class="span1 help-calc"></div>
                                 <div class="span2" style="width:150px; margin-left:10px;"><label for="lamination">Ламинация:</label></div>
                                 <div class="span3">
                                     <select name="lamination" id="lamination" style="width:170px;">
@@ -258,9 +219,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="span1 help-calc">
-                                    <!-- <a href="#uf"><i class="icon-question-sign icon-2x"></i></a> -->
-                                </div>
+                                <div class="span1 help-calc"></div>
                                 <div class="span2" style="width:150px; margin-left:10px;"><label for="uf">Покрытие УФ-лаком:</label></div>
                                 <div class="span3">
                                     <select name="uf" id="uf" style="width:170px;">
@@ -305,6 +264,9 @@
                                         <option value="one glossy">Односторонний глянцевый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
+                                    <label class="checkbox" style="margin-left:1px;">
+                                        <input type="checkbox" name="choose_cover-uf" id="choose_cover-uf" value=""> Выборочный
+                                    </label>
                                 </div>
                             </div>
                     </div>
@@ -314,22 +276,9 @@
                             <div class="row">
                                 <div class="span1 help-calc">
                                 </div>
-<!--                                 <div class="span2" style="width:150px; margin-left:10px;">
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="folding" value=""> 
-                                        Фальцовка
-                                    </label>
-                                </div>
-                                <div class="span2">
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="binding" value="">
-                                        Скрепление
-                                    </label>
-                                </div>
- -->                            </div>
+                            </div>
                             <div class="row">
                                 <div class="span1 help-calc">
-                                    <!-- <a href="#impression"><i class="icon-question-sign icon-2x"></i></a> -->
                                 </div>
                                 <div class="span2" style="width:150px; margin-left:10px;">
                                     <label for="impression-width">Тиснение:</label>
@@ -341,9 +290,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="span1 help-calc">
-                                    <!-- <a href="#stamp"><i class="icon-question-sign icon-2x"></i></a> -->
-                                </div>
+                                <div class="span1 help-calc"></div>
                                 <div class="span2" style="width:150px; margin-left:10px;">
                                         <label for="stamping-width">Конгрев:</label>
                                 </div>
@@ -359,9 +306,7 @@
         </div>
     </div>
     <br>
-    <center>
-        <input class="btn btn-primary" type="submit" value="Calculate">
-    </center>
+    <center><input class="btn btn-primary" type="submit" value="Calculate"></center>
     </form>
   </body>
 </html>
