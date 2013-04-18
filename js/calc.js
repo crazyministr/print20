@@ -145,7 +145,7 @@ $(document).ready(function() {
         {
             $('#format-width, #format-height').attr("disabled", "disabled");
             formatProduct.removeAttr("disabled");
-            chooseProduct.change();
+            formatProduct.change();
         }
     })
 
@@ -156,6 +156,12 @@ $(document).ready(function() {
             $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
     })
     $('#choose_uf').change();
+
+    function makeDisabled()
+    {
+        $('#cover-pages').attr('disabled', 'disabled');
+        $('#new_format').change();
+    }
 
     $('form').submit(function() {
         formatProduct.removeAttr('disabled');
@@ -177,6 +183,7 @@ $(document).ready(function() {
                     alert("Количество полос в блоке данного продукта должно быть кратно двум");
             }
             document.forms[0].pages.focus();
+            makeDisabled();
             return false;
         }
         return true;
