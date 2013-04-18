@@ -170,17 +170,14 @@ $(document).ready(function() {
     })
     $('#choose_uf').change();
 
-    function makeDisabled()
-    {
-        $('#cover-pages').attr('disabled', 'disabled');
-        $('#new_format').change();
-    }
-
     $('form').submit(function() {
-        formatProduct.removeAttr('disabled');
-        $('#format-width, #format-height').removeAttr('disabled');
-        $('#pages').removeAttr('disabled');
-        $('#cover-pages').removeAttr('disabled');
+        var circulation = document.forms[0].circulation.value;
+        if (circulation == 0)
+        {
+            alert("Тираж должен быть больше нуля");
+            document.forms[0].circulation.focus();
+            return false;
+        }
 
         var v = document.forms[0].pages.value;
         var x = chooseProduct.val();
@@ -196,9 +193,12 @@ $(document).ready(function() {
                     alert("Количество полос в блоке данного продукта должно быть кратно двум");
             }
             document.forms[0].pages.focus();
-            makeDisabled();
             return false;
         }
+        formatProduct.removeAttr('disabled');
+        $('#format-width, #format-height').removeAttr('disabled');
+        $('#pages').removeAttr('disabled');
+        $('#cover-pages').removeAttr('disabled');
         return true;
     })
 })
