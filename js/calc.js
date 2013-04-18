@@ -55,13 +55,17 @@ $(document).ready(function() {
                 $('.fourth').show();
                 $('.sixth').show();
             }
-            else if (predV != v)
+            else if (v == 0 && predV != v)
             {
                 $('.postprint').toggleClass("span6");
                 $('.postprint').toggleClass("span10");
                 $('.fourth').hide();
                 $('.sixth').hide();
             }
+            if (v == 1)
+                $('#cover').attr('checked', 'checked');
+            else
+                $('#cover').removeAttr('checked');
             predV = v;
         });
 
