@@ -4,5 +4,5 @@
 	if ($prod[$ch]->type != 'singlepage')
 		echo "<input type='hidden' name='cover' id='cover' value='1'>";
 	else
-		echo "<input type='hidden' name='cover' id='cover' value='0'>";
+		echo "<input type='hidden' name='cover' id='cover' value='0' disabled>";
 ?>

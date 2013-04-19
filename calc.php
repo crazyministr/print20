@@ -267,7 +267,7 @@
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
                                     <label class="checkbox" style="margin-left:1px;">
-                                        <input type="checkbox" name="choose_cover-uf" id="choose_cover-uf" value=""> Выборочный
+                                        <input type="hidden" name="choose_cover-uf" id="choose_cover-uf" value=""> Выборочный
                                     </label>
                                 </div>
                             </div>
