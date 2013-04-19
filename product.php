@@ -28,7 +28,7 @@ class product {
         }
 
         $result['operations'] = array();
-
+        $result['operations']['packing'] = array('attrs' => array());
         // operation impression
         if ($this->data['impression-width'] != '' && $this->data['impression-height'] != '' && $this->data['impression-times'] != '') {
             $impression_attrs = array(
