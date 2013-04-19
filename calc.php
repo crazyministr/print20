@@ -251,11 +251,11 @@
                             <div class="row">
                                 <div class="span3">
                                     <select name="cover-lamination" id="cover-lamination" style="width:170px;">
-                                        <option value="no">Без ламинации</option>
+<!--                                         <option value="no">Без ламинации</option>
                                         <option value="one matted">Односторонняя матовая</option>
                                         <option value="one glossy">Односторонняя глянцевая</option>
                                         <option value="two matted">Двусторонняя матовая</option>
-                                        <option value="two glossy">Двусторонняя глянцевая</option>
+                                        <option value="two glossy">Двусторонняя глянцевая</option> -->
                                     </select>
                                 </div>
                             </div>
