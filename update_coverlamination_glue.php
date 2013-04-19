@@ -2,7 +2,9 @@
 	$ch = $_GET['ch'];
 	if ($ch == "Booklet_(termo-glue)")
 	{
-		echo "";
+		echo "<option value='no'>Без ламинации</option>";
+		echo "<option value='one matted'>Односторонняя матовая</option>";
+		echo "<option value='one glossy'>Односторонняя глянцевая</option>";
 	}
 	else
 	{

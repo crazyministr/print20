@@ -68,9 +68,14 @@ $(document).ready(function() {
                 $('#cover').removeAttr('checked');
             predV = v;
         });
-
         
-        $('#cover-lamination').load("update_lamination_glue.php?ch=" + x);
+        $('#cover-lamination').load("update_coverlamination_glue.php?ch=" + x);
+        $('#lamination').load("update_lamination_glue.php?ch=" + x, function(){
+            if (x == "Booklet_(termo-glue)")
+                $('#lamination').attr('disabled', 'disabled');
+            else
+                $('#lamination').removeAttr('disabled');
+        });
 
         if (x == 'Kubarik')
         {
@@ -169,13 +174,28 @@ $(document).ready(function() {
         }
     });
 
-    $('#choose_uf').change(function(){
-        if ($('#choose_uf').is(':checked'))
-            $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
-        else
-            $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
-    })
-    $('#choose_uf').change();
+    var _upd_choose_uf = function(){
+        $('#choose_uf').change(function(){
+            if ($('#choose_uf').is(':checked')) {
+                $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
+            }
+            else {
+                $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
+            }
+        })
+    }
+
+    _upd_choose_uf();
+
+    $('#uf').change(function () {
+        var v = $(this).val();
+        if (v != "no")
+            v = "";
+        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function () {
+            $('#choose_uf').change();
+            _upd_choose_uf();
+        });
+    });
 
     $('form').submit(function() {
         var circulation = document.forms[0].circulation.value;

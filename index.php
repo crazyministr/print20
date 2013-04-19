@@ -26,7 +26,7 @@
 
         foreach ($_POST as $key => $value) {
             $post[$key] = $value;
-//            echo $key . ' ' . $value . '<br>';
+           echo $key . ' ' . $value . '<br>';
         }
 
         $temp_str = $_POST['choose-product'];

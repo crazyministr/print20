@@ -129,11 +129,7 @@
                         <div class="span1 help-calc"></div>
                         <div class="span2" style="width:150px; margin-left:10px;"><label for="density">Плотность:</label></div>
                         <div class="span3">
-                            <select name="density" id="density" style="width:180px; float:left;">
-                                <option value="90">90</option>
-                                <option value="100">100</option>
-                                <option value="210">210</option>
-                            </select>
+                            <select name="density" id="density" style="width:180px; float:left;"></select>
                             <p>г/м<sup>2</sup></p>
                         </div>
                     </div>
@@ -227,9 +223,10 @@
                                         <option value="one glossy">Односторонний глянцевый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
-                                    <label class="checkbox" style="margin-left:16px;">
-                                        <input type="checkbox" name="choose_uf" id="choose_uf" value=""> Выборочный
-                                    </label>
+                                    <br>
+                                    <label class="checkbox" style="margin-left:16px;" id="uf_checkbox">
+                                        <input type="hidden" name="choose_uf" id="choose_uf" value="" disabled="disabled"> 
+                                     </label>
                                 </div>
                             </div>
                     </div>
@@ -250,13 +247,7 @@
                             </div>
                             <div class="row">
                                 <div class="span3">
-                                    <select name="cover-lamination" id="cover-lamination" style="width:170px;">
-<!--                                         <option value="no">Без ламинации</option>
-                                        <option value="one matted">Односторонняя матовая</option>
-                                        <option value="one glossy">Односторонняя глянцевая</option>
-                                        <option value="two matted">Двусторонняя матовая</option>
-                                        <option value="two glossy">Двусторонняя глянцевая</option> -->
-                                    </select>
+                                    <select name="cover-lamination" id="cover-lamination" style="width:170px;"></select>
                                 </div>
                             </div>
                             <div class="row">
@@ -266,18 +257,18 @@
                                         <option value="one glossy">Односторонний глянцевый</option>
                                         <option value="two glossy">Двусторонний глянцевый</option>
                                     </select>
-                                    <label class="checkbox" style="margin-left:1px;">
-                                        <input type="hidden" name="choose_cover-uf" id="choose_cover-uf" value=""> Выборочный
+                                    <label class="checkbox" style="margin-left:1px;" id="cover-uf_checkbox">
+                                        <!-- <input type="hidden" name="choose_cover-uf" id="choose_cover-uf" value=""> -->
                                     </label>
                                 </div>
                             </div>
                     </div>
                 </div>
+                <!--
                 <div class="row">
                     <div class="span6" id="seventh-param">
                             <div class="row">
-                                <div class="span1 help-calc">
-                                </div>
+                                <div class="span1 help-calc"></div>
                             </div>
                             <div class="row">
                                 <div class="span1 help-calc">
@@ -303,7 +294,7 @@
                                 </div>
                             </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
