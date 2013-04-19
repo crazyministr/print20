@@ -24,11 +24,11 @@
         require_once 'save_product.php';
         require_once 'xml2array.php';
 
+
         foreach ($_POST as $key => $value) {
             $post[$key] = $value;
            echo $key . ' ' . $value . '<br>';
         }
-
         $temp_str = $_POST['choose-product'];
         for ($i = 0; $i < strlen($temp_str); $i++)
             if ($temp_str[$i] == '_')
@@ -73,6 +73,11 @@
             ?>
         </table>
     </center>
+<?php
+        foreach ($post as $key => $value) {
+            echo $key . ' ' . $value . '<br>';
+        }
+?>
 </form>
 </body>
 </html>
