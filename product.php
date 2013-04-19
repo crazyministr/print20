@@ -119,7 +119,7 @@ class product {
         }
 
         //tag parts -> cover
-        if (isset($this->data['cover'])) {
+        if ($this->data['json-product']['type'] == 'multipage') {
             $result['parts']['cover']['chromacity'] = $this->data['cover-chromacity'];
             $result['parts']['cover']['pages'] = $this->data['cover-pages'];
             $result['parts']['cover']['density'] = $this->data['cover-density'];
