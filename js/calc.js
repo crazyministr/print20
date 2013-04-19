@@ -69,6 +69,9 @@ $(document).ready(function() {
             predV = v;
         });
 
+        
+        $('#cover-lamination').load("update_lamination_glue.php?ch=" + x);
+
         if (x == 'Kubarik')
         {
             $('#material').load("update_material_product.php?ch=" + "disabled");
