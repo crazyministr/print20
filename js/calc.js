@@ -3,6 +3,7 @@ $(document).ready(function() {
     var formatProduct = $('#format-product');
     var material = $('#material');
     var predV = 0;
+    var cover_material = $('#cover-material');
 
     // Поворачиваем продукт (меняем ширину и высоту в формате продукта) "кнопкой"
     $('#exchange').click(function() {
@@ -68,9 +69,9 @@ $(document).ready(function() {
                 $('#cover').removeAttr('checked');
             predV = v;
         });
-        
+
         $('#cover-lamination').load("update_coverlamination_glue.php?ch=" + x);
-        $('#lamination').load("update_lamination_glue.php?ch=" + x, function(){
+        $('#lamination').load("update_lamination_glue.php?ch=" + x, function() {
             if (x == "Booklet_(termo-glue)")
                 $('#lamination').attr('disabled', 'disabled');
             else
@@ -117,7 +118,7 @@ $(document).ready(function() {
     material.change(function() {
         var x = material.val();
         $('#density').load("update_density.php?ch=" + x);
-        $('#surface').load("update_surface.php?ch=" + x, function(){
+        $('#surface').load("update_surface.php?ch=" + x, function() {
             if (x != 'paper')
                 $('#surface').attr('disabled', 'disabled');
             else
@@ -125,6 +126,18 @@ $(document).ready(function() {
         });
     });
     material.change();
+
+    cover_material.change(function() {
+        var x = cover_material.val();
+        $('#cover-density').load("update_density.php?ch=" + x);
+        $('#cover-surface').load("update_surface.php?ch=" + x, function() {
+            if (x != 'paper')
+                $('#cover-surface').attr('disabled', 'disabled');
+            else
+                $('#cover-surface').removeAttr('disabled');
+        });
+    });
+    cover_material.change();
 
     // свой формат
     $('#new_format').change(function() {
@@ -174,28 +187,31 @@ $(document).ready(function() {
         }
     });
 
-    var _upd_choose_uf = function(){
-        $('#choose_uf').change(function(){
-            if ($('#choose_uf').is(':checked')) {
-                $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
-            }
-            else {
-                $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
-            }
-        })
-    }
-
-    _upd_choose_uf();
-
-    $('#uf').change(function () {
+    $('#uf').change(function() {
         var v = $(this).val();
         if (v != "no")
             v = "";
-        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function () {
+        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function() {
             $('#choose_uf').change();
-            _upd_choose_uf();
+        });
+        $('#solid_checkbox').load("update_solid_checkbox.php?ch=" + v, function() {
+            $('#solid_uf').change();
         });
     });
+
+
+    $('#cover-uf').change(function() {
+        var v = $(this).val();
+        if (v != "no")
+            v = "";
+        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v, function() {
+            $('#choose_cover_uf').change();
+        });
+        $('#cover_solid_checkbox').load("update_cover_solid_checkbox.php?ch=" + v, function() {
+            $('#choose_cover_solid').change();
+        });
+    });
+
 
     $('form').submit(function() {
         var circulation = document.forms[0].circulation.value;

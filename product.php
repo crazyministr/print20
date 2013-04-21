@@ -157,7 +157,7 @@ class product {
                 $temp = explode(' ', $this->data['cover-uf']);
                 $uf_attrs['side'] = $temp[0];
                 $uf_attrs['type'] = $temp[1];
-                $uf_attrs['selected'] = isset($this->data['choose_cover-uf']) ? 'true' : 'false';
+                $uf_attrs['selected'] = isset($this->data['choose_cover_uf']) ? 'true' : 'false';
                 $result['parts']['cover']['operations']['uf_varnishing'] = array(
                     'attrs' => $uf_attrs
                 );
