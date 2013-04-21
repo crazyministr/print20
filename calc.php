@@ -227,10 +227,10 @@ require_once 'save_materials.php';
                                         <label class="checkbox" style="margin-left:16px;" id="uf_checkbox">
                                             <input type="hidden" name="choose_uf" id="choose_uf" value="" disabled="disabled">
                                         </label>
-                                        <label class="checkbox" style="margin-left:16px;" id="solid_checkbox">
+<!--                                         <label class="checkbox" style="margin-left:16px;" id="solid_checkbox">
                                             <input type="hidden" name="solid_uf" id="solid_uf" value="" disabled="disabled"> 
                                         </label>
-                                    </div>
+ -->                                    </div>
                                 </div>
                             </div>
                             <div class="span3 fourth" style="display:none;" id="sixth-param">
@@ -260,13 +260,14 @@ require_once 'save_materials.php';
                                             <option value="one glossy">Односторонний глянцевый</option>
                                             <option value="two glossy">Двусторонний глянцевый</option>
                                         </select>
-                                        <label class="checkbox" style="margin-left:16px;" id="cover_uf_checkbox">
+                                        <br>
+                                        <label class="checkbox" style="margin-left:1px;" id="cover_uf_checkbox">
                                             <input type="hidden" name="choose_cover_uf" id="choose_cover_uf" value=""> 
                                         </label>
-                                        <label class="checkbox" style="margin-left:16px;" id="cover_solid_checkbox">
+<!--                                         <label class="checkbox" style="margin-left:16px;" id="cover_solid_checkbox">
                                             <input type="hidden" name="solid_cover_uf" id="solid_cover_uf" value="" disabled="disabled"> 
                                         </label>
-                                    </div>
+ -->                                    </div>
                                 </div>
                             </div>
                         </div>

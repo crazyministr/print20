@@ -4,7 +4,7 @@
 	for ($i = 0; $i < count($density['paper']); $i++)
 	{
 		$w = $density['paper'][$i];
-		if ((int) $w <= $ch)
+		if ($ch == 150 && (int) $w <= $ch || $ch == 170 && (int) $w >= $ch || $ch == 1000)
 			echo "<option value='$w'>$w</option>";
 	}
 ?>

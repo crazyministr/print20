@@ -1,64 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product name="Booklet (spring)" TOTAL="25429.0">
-  <operations total_cost="1550.0">
-    <perforation total_cost="700.0">700.0</perforation>
-    <binding total_cost="200.0">200.0</binding>
+<product name="Booklet (brace)" TOTAL="29436.0">
+  <operations total_cost="792.25">
+    <binding total_cost="692.25">692.25</binding>
     <packing total_cost="100.0">100.0</packing>
-    <selection total_cost="550.0">550.0</selection>
   </operations>
-  <materials total_cost="240.0">
-    <spring total_cost="240.0">240.0</spring>
-  </materials>
-  <spread_format>297x210</spread_format>
+  <materials total_cost="-">-</materials>
+  <spread_format>297x420</spread_format>
   <format>297x210</format>
-  <circulation>100</circulation>
-  <weight>67.0</weight>
+  <circulation>123</circulation>
+  <weight>78.0</weight>
   <parts>
     <block>
-      <operations total_cost="2745.0">
-        <uf_varnishing total_cost="2700.0">2700.0</uf_varnishing>
-        <cutting total_cost="45.0">45.0</cutting>
+      <operations total_cost="2025.81">
+        <uf_varnishing total_cost="1992.6">1992.6</uf_varnishing>
+        <cutting total_cost="33.21">33.21</cutting>
       </operations>
-      <materials total_cost="3811.9">
-        <film total_cost="3000.0">3000.0</film>
-        <uf_varnish total_cost="130.28">130.28</uf_varnish>
-        <paper total_cost="681.62">681.62</paper>
+      <materials total_cost="11290.77">
+        <film total_cost="1800.0">1800.0</film>
+        <uf_varnish total_cost="192.91">192.91</uf_varnish>
+        <form total_cost="7296.0">7296.0</form>
+        <chemicals total_cost="342.02">342.02</chemicals>
+        <paper total_cost="1659.84">1659.84</paper>
       </materials>
-      <machine>Digital printer</machine>
-      <print_time>0.0</print_time>
-      <paper_count>563</paper_count>
-      <cutting_sheet_format>470x315 (x2)</cutting_sheet_format>
+      <machine>Heidelberg Speedmaster SM 74</machine>
+      <print_time>3.229</print_time>
+      <paper_count>1309</paper_count>
+      <cutting_sheet_format>650x457 (x1)</cutting_sheet_format>
       <optimal_layout>2</optimal_layout>
-      <orientation>VERTICAL</orientation>
+      <orientation>HORIZONTAL</orientation>
       <paper>1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2</paper>
-      <sheets_on_product>5.0</sheets_on_product>
-      <worksheet_runs>1000</worksheet_runs>
+      <sheets_on_product>3.0</sheets_on_product>
+      <worksheet_runs>2443</worksheet_runs>
       <itself_printing />
     </block>
     <cover>
-      <operations total_cost="1509.0">
+      <operations total_cost="1507.38">
         <uf_varnishing total_cost="1500.0">1500.0</uf_varnishing>
-        <cutting total_cost="9.0">9.0</cutting>
+        <cutting total_cost="7.38">7.38</cutting>
       </operations>
-      <materials total_cost="173.02">
-        <uf_varnish total_cost="26.05">26.05</uf_varnish>
-        <paper total_cost="146.96">146.96</paper>
+      <materials total_cost="242.31">
+        <uf_varnish total_cost="64.09">64.09</uf_varnish>
+        <paper total_cost="178.22">178.22</paper>
       </materials>
       <machine>Digital printer</machine>
       <print_time>0.0</print_time>
-      <paper_count>121</paper_count>
+      <paper_count>144</paper_count>
       <cutting_sheet_format>470x315 (x2)</cutting_sheet_format>
-      <optimal_layout>2</optimal_layout>
+      <optimal_layout>1</optimal_layout>
       <orientation>VERTICAL</orientation>
       <paper>1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2</paper>
       <sheets_on_product>1.0</sheets_on_product>
-      <worksheet_runs>200</worksheet_runs>
+      <worksheet_runs>246</worksheet_runs>
       <itself_printing />
     </cover>
   </parts>
-  <printing>15400.0</printing>
-  <total_time>0.0</total_time>
-  <Total_paper_count>684</Total_paper_count>
+  <printing>13577.0</printing>
+  <total_time>3.229</total_time>
+  <Total_paper_count>1453</Total_paper_count>
 </product>
 
 

@@ -1,50 +1,49 @@
-Product: Booklet (spring)
+Product: Booklet (brace)
 Format: 297x210
-Weight: 67.0
-Spread format: 297x210
-Circulation: 100
-operations: 1550.0
-    perforation: 700.0
-    binding: 200.0
+Weight: 78.0
+Spread format: 297x420
+Circulation: 123
+operations: 792.25
+    binding: 692.25
     packing: 100.0
-    selection: 550.0
-materials: 240.0
-    spring: 240.0
+materials: -
 block
-    Printing machine: Digital printer
-    operations: 2745.0
-        uf_varnishing: 2700.0
-        cutting: 45.0
-    materials: 3811.9
-        film: 3000.0
-        uf_varnish: 130.28
-        paper: 681.62
-    Sheets on product: 5.0
+    Printing machine: Heidelberg Speedmaster SM 74
+    operations: 2025.81
+        uf_varnishing: 1992.6
+        cutting: 33.21
+    materials: 11290.77
+        film: 1800.0
+        uf_varnish: 192.91
+        form: 7296.0
+        chemicals: 342.02
+        paper: 1659.84
+    Sheets on product: 3.0
     Printing on itself: NO.
     Paper: 1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2
-    Paper count: 563
-    Paper cutting count: 470x315 (x2)
+    Paper count: 1309
+    Paper cutting count: 650x457 (x1)
     Optimal layout: 2 spread on sheet
-    Product orientation: VERTICAL
-    Worksheet runs: 1000
-    Pringint time: 0.0
+    Product orientation: HORIZONTAL
+    Worksheet runs: 2443
+    Pringint time: 3.229
 cover
     Printing machine: Digital printer
-    operations: 1509.0
+    operations: 1507.38
         uf_varnishing: 1500.0
-        cutting: 9.0
-    materials: 173.02
-        uf_varnish: 26.05
-        paper: 146.96
+        cutting: 7.38
+    materials: 242.31
+        uf_varnish: 64.09
+        paper: 178.22
     Sheets on product: 1.0
     Printing on itself: NO.
     Paper: 1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2
-    Paper count: 121
+    Paper count: 144
     Paper cutting count: 470x315 (x2)
-    Optimal layout: 2 spread on sheet
+    Optimal layout: 1 spread on sheet
     Product orientation: VERTICAL
-    Worksheet runs: 200
+    Worksheet runs: 246
     Pringint time: 0.0
-Printing cost: 15400.0
-Common sheets count: 684
-TOTAL: 25429.0
+Printing cost: 13577.0
+Common sheets count: 1453
+TOTAL: 29436.0

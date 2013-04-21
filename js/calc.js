@@ -43,6 +43,8 @@ $(document).ready(function() {
     // при выборе другого продукта
 
     chooseProduct.change(function() {
+        $('#new_format').removeAttr('checked');
+        $('#new_format').change();
         var x = chooseProduct.val();
         $('#checkbox').load("update_cover.php?ch=" + x, function() {
             var v = $('#cover').val();
@@ -78,7 +80,20 @@ $(document).ready(function() {
                 $('#lamination').removeAttr('disabled');
         });
 
-        if (x == 'Kubarik')
+        if (x == 'Booklet_(termo-glue)')
+        {
+            $('#material').load("update_material_product.php?ch=" + "enabledX");
+            var t = material.val();
+            $('#density').load("update_glue_density.php?ch=" + t);
+            $('#cover-material').load("update_material_product.php?ch=" + "disabled");
+            $('#cover-density').load("update_kubarik_density.php?ch=" + 170);
+        }
+        else if (x == 'Booklet_(brace)')
+        {
+            $('#material').load("update_material_product.php?ch=" + "enabledX");
+            $('#density').load("update_kubarik_density.php?ch=" + 1000);
+        }
+        else if (x == 'Kubarik')
         {
             $('#material').load("update_material_product.php?ch=" + "disabled");
             $('#density').load("update_kubarik_density.php?ch=" + 150);
@@ -88,23 +103,19 @@ $(document).ready(function() {
             $('#material').load("update_material_product.php?ch=" + "enabled");
             $('#density').load("update_kubarik_density.php?ch=" + 1000);
         }
+        if (x != 'Booklet_(termo-glue)')
+        {
+            $('#cover-material').load("update_material_product.php?ch=" + "enabled");
+            $('#cover-density').load("update_kubarik_density.php?ch=" + 1000);
+        }
 
         formatProduct.load("update_format_product.php?ch=" + x, function() {
             var product_format = $(this).val();
             var product_width = '';
             var product_height = '';
             var a = product_format.split('x');
-            if (($.isNumeric(a[0])) && ($.isNumeric(a[1])))
-            {
-                $('#format-width').val(a[0]);
-                $('#format-height').val(a[1]);
-            }
-            else
-            {
-                $('#format-width').val('');
-                $('#format-height').val('');
-            }
-
+            $('#format-width').val(a[0]);
+            $('#format-height').val(a[1]);
             if (formatProduct.children().length < 2)
                 formatProduct.attr('disabled', 'disabled');
             else
@@ -124,6 +135,27 @@ $(document).ready(function() {
             else
                 $('#surface').removeAttr('disabled');
         });
+        if (x == 'offset')
+        {
+            $('#lamination').attr('disabled', 'disabled');
+            $('#uf').attr('disabled', 'disabled');
+        }
+        else
+        {
+            $('#lamination').removeAttr('disabled', 'disabled');
+            $('#uf').removeAttr('disabled', 'disabled');
+        }
+        var xx = chooseProduct.val();
+        if (xx == 'Booklet_(termo-glue)')
+        {
+            $('#lamination').attr('disabled', 'disabled');
+            $('#uf').attr('disabled', 'disabled');
+            $('#density').load("update_glue_density.php?ch=" + x);
+        }
+        else
+        {
+            $('#density').load("update_kubarik_density.php?ch=" + 1000);
+        }
     });
     material.change();
 
@@ -136,6 +168,16 @@ $(document).ready(function() {
             else
                 $('#cover-surface').removeAttr('disabled');
         });
+        if (x == 'offset')
+        {
+            $('#cover-lamination').attr('disabled', 'disabled');
+            $('#cover-uf').attr('disabled', 'disabled');
+        }
+        else
+        {
+            $('#cover-lamination').removeAttr('disabled', 'disabled');
+            $('#cover-uf').removeAttr('disabled', 'disabled');
+        }
     });
     cover_material.change();
 
@@ -162,13 +204,13 @@ $(document).ready(function() {
         {
             $('#uf').attr('disabled', 'disabled');
             $('#choose_uf').attr('disabled', 'disabled');
-            $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
+            // $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
         }
         else
         {
             $('#uf').removeAttr('disabled');
             $('#choose_uf').removeAttr('disabled');
-            $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
+            // $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
         }
     });
 
@@ -191,11 +233,18 @@ $(document).ready(function() {
         var v = $(this).val();
         if (v != "no")
             v = "";
-        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function() {
-            $('#choose_uf').change();
-        });
-        $('#solid_checkbox').load("update_solid_checkbox.php?ch=" + v, function() {
-            $('#solid_uf').change();
+        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function(){
+            var x = chooseProduct.val();
+            if (x == 'Booklet_(termo-glue)')
+            {
+                $('#choose_uf').attr('checked', 'checked');
+                $('#choose_uf').attr('disabled', 'disabled');
+            }
+            else
+            {
+                $('#choose_uf').removeAttr('checked');
+                $('#choose_uf').removeAttr('disabled');
+            }
         });
     });
 
@@ -204,12 +253,7 @@ $(document).ready(function() {
         var v = $(this).val();
         if (v != "no")
             v = "";
-        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v, function() {
-            $('#choose_cover_uf').change();
-        });
-        $('#cover_solid_checkbox').load("update_cover_solid_checkbox.php?ch=" + v, function() {
-            $('#choose_cover_solid').change();
-        });
+        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v);
     });
 
 
@@ -222,6 +266,13 @@ $(document).ready(function() {
             return false;
         }
 
+        var product_width = $('#format-width').val();
+        var product_height = $('#format-height').val();
+        if (product_width == "" || product_height == "")
+        {
+            alert("Неверный формат");
+            return false;
+        }
         var v = document.forms[0].pages.value;
         var x = chooseProduct.val();
         if (v == 0 || v % 2 != 0)
