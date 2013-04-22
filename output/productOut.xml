@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product name="Booklet" TOTAL="7209.0">
+<product name="Booklet" TOTAL="1891.0">
   <operations total_cost="100.0">
     <packing total_cost="100.0">100.0</packing>
   </operations>
   <materials total_cost="-">-</materials>
   <spread_format>148x210</spread_format>
   <format>148x105</format>
-  <circulation>1000</circulation>
+  <circulation>100</circulation>
   <weight>2.0</weight>
   <parts>
     <block>
-      <operations total_cost="2080.0">
-        <uf_varnishing total_cost="1500.0">1500.0</uf_varnishing>
+      <operations total_cost="553.0">
         <folding total_cost="550.0">550.0</folding>
-        <cutting total_cost="30.0">30.0</cutting>
+        <cutting total_cost="3.0">3.0</cutting>
       </operations>
-      <materials total_cost="1679.24">
-        <uf_varnish total_cost="65.14">65.14</uf_varnish>
-        <form total_cost="1248.0">1248.0</form>
-        <chemicals total_cost="60.2">60.2</chemicals>
-        <paper total_cost="305.89">305.89</paper>
+      <materials total_cost="37.24">
+        <paper total_cost="37.24">37.24</paper>
       </materials>
-      <machine>Heidelberg Speedmaster SM 52</machine>
-      <print_time>0.558</print_time>
-      <paper_count>230</paper_count>
+      <machine>Digital printer</machine>
+      <print_time>0.0</print_time>
+      <paper_count>28</paper_count>
       <cutting_sheet_format>470x315 (x2)</cutting_sheet_format>
       <optimal_layout>4</optimal_layout>
       <orientation>VERTICAL</orientation>
       <paper>1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2</paper>
       <sheets_on_product>0.25</sheets_on_product>
-      <worksheet_runs>860</worksheet_runs>
+      <worksheet_runs>50</worksheet_runs>
       <itself_printing />
     </block>
   </parts>
-  <printing>3350.0</printing>
-  <total_time>0.558</total_time>
-  <Total_paper_count>230</Total_paper_count>
+  <printing>1200.0</printing>
+  <total_time>0.0</total_time>
+  <Total_paper_count>28</Total_paper_count>
 </product>
 
 

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product name="Booklet"><circulation>1000</circulation><format>148x105</format><operations><packing/></operations><parts><block><chromacity>4x4</chromacity><pages>4</pages><density>70</density><materials><type>offset</type></materials><operations><folding>1</folding><lamination side="one" type="matted"/><uf_varnishing side="one" type="glossy" selected="false"/></operations></block></parts></product>
+<product name="Booklet"><circulation>100</circulation><format>148x105</format><operations><packing/></operations><parts><block><chromacity>4x4</chromacity><pages>4</pages><density>90</density><materials><type>paper</type><surface>matted</surface></materials><operations><folding>1</folding></operations></block></parts></product>

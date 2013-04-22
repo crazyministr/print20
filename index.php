@@ -60,6 +60,7 @@
         $result_cost = xml2array($productOut);
         echo "<a href=" . $file_name . ">input Xml</a><br><br>";
         echo "<a href=output/productOut.xml>output Xml</a><br><br>";
+	$comment = $post['comment'];
         ?>
 
         <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -73,11 +74,6 @@
             ?>
         </table>
     </center>
-<?php
-        foreach ($post as $key => $value) {
-            echo $key . ' ' . $value . '<br>';
-        }
-?>
 </form>
 </body>
 </html>

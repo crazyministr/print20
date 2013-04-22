@@ -275,7 +275,7 @@ require_once 'save_materials.php';
                 </div>
 
 		<div class="row">
-			<div class="span3 fourth" id="seven" style="min-height:80px; min-width:460px;">
+			<div class="span3" id="seven" style="min-height:80px; min-width:460px;">
                         <p style="text-align:center; font-weight:bold;">Комментарии к заказу</p>
 			<textarea id="comment" name="comment" rows="3" style="width:425px; margin-left:10px;"></textarea>
 			</div>
