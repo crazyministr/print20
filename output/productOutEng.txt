@@ -1,49 +1,31 @@
-Product: Booklet (brace)
-Format: 297x210
-Weight: 78.0
-Spread format: 297x420
-Circulation: 123
-operations: 792.25
-    binding: 692.25
+Product: Booklet
+Format: 148x105
+Weight: 2.0
+Spread format: 148x210
+Circulation: 1000
+operations: 100.0
     packing: 100.0
 materials: -
 block
-    Printing machine: Heidelberg Speedmaster SM 74
-    operations: 2025.81
-        uf_varnishing: 1992.6
-        cutting: 33.21
-    materials: 11290.77
-        film: 1800.0
-        uf_varnish: 192.91
-        form: 7296.0
-        chemicals: 342.02
-        paper: 1659.84
-    Sheets on product: 3.0
-    Printing on itself: NO.
-    Paper: 1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2
-    Paper count: 1309
-    Paper cutting count: 650x457 (x1)
-    Optimal layout: 2 spread on sheet
-    Product orientation: HORIZONTAL
-    Worksheet runs: 2443
-    Pringint time: 3.229
-cover
-    Printing machine: Digital printer
-    operations: 1507.38
+    Printing machine: Heidelberg Speedmaster SM 52
+    operations: 2080.0
         uf_varnishing: 1500.0
-        cutting: 7.38
-    materials: 242.31
-        uf_varnish: 64.09
-        paper: 178.22
-    Sheets on product: 1.0
+        folding: 550.0
+        cutting: 30.0
+    materials: 1679.24
+        uf_varnish: 65.14
+        form: 1248.0
+        chemicals: 60.2
+        paper: 305.89
+    Sheets on product: 0.25
     Printing on itself: NO.
     Paper: 1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2
-    Paper count: 144
+    Paper count: 230
     Paper cutting count: 470x315 (x2)
-    Optimal layout: 1 spread on sheet
+    Optimal layout: 4 spread on sheet
     Product orientation: VERTICAL
-    Worksheet runs: 246
-    Pringint time: 0.0
-Printing cost: 13577.0
-Common sheets count: 1453
-TOTAL: 29436.0
+    Worksheet runs: 860
+    Pringint time: 0.558
+Printing cost: 3350.0
+Common sheets count: 230
+TOTAL: 7209.0
