@@ -149,7 +149,7 @@ $(document).ready(function() {
             $('#lamination').load("default_lamination.php", function(){
                 $('#lamination').attr('disabled', 'disabled');
             });
-            $('#uf').load("default_uf", function(){
+            $('#uf').load("default_uf.php", function(){
                 $('#uf').attr('disabled', 'disabled');
             });
         }
@@ -164,7 +164,7 @@ $(document).ready(function() {
             $('#lamination').load("default_lamination.php", function(){
                 $('#lamination').attr('disabled', 'disabled');
             });
-            $('#uf').load("default_uf", function(){
+            $('#uf').load("default_uf.php", function(){
                 $('#uf').attr('disabled', 'disabled');
             });
             $('#density').load("update_glue_density.php?ch=" + x);
@@ -219,7 +219,7 @@ $(document).ready(function() {
         var a = v.split(' ');
         if (a[0] != 'no' && a[1] == 'glossy')
         {
-            $('#uf').load("default_uf", function(){
+            $('#uf').load("default_uf.php", function(){
                 $('#uf').attr('disabled', 'disabled');
             });
             $('#choose_uf').attr('disabled', 'disabled');
