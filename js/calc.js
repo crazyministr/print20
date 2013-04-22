@@ -43,6 +43,11 @@ $(document).ready(function() {
     // при выборе другого продукта
 
     chooseProduct.change(function() {
+        $('#vd').load("default_vd.php");
+        $('#lamination').load("default_lamination.php");
+        $('#uf').load("default_uf.php", function(){
+            $('#uf').change();
+        });
         $('#new_format').removeAttr('checked');
         $('#new_format').change();
         var x = chooseProduct.val();
@@ -75,7 +80,11 @@ $(document).ready(function() {
         $('#cover-lamination').load("update_coverlamination_glue.php?ch=" + x);
         $('#lamination').load("update_lamination_glue.php?ch=" + x, function() {
             if (x == "Booklet_(termo-glue)")
-                $('#lamination').attr('disabled', 'disabled');
+            {
+                $('#lamination').load("default_lamination.php", function(){
+                    $('#lamination').attr('disabled', 'disabled');
+                });
+            }
             else
                 $('#lamination').removeAttr('disabled');
         });
@@ -137,8 +146,12 @@ $(document).ready(function() {
         });
         if (x == 'offset')
         {
-            $('#lamination').attr('disabled', 'disabled');
-            $('#uf').attr('disabled', 'disabled');
+            $('#lamination').load("default_lamination.php", function(){
+                $('#lamination').attr('disabled', 'disabled');
+            });
+            $('#uf').load("default_uf", function(){
+                $('#uf').attr('disabled', 'disabled');
+            });
         }
         else
         {
@@ -148,8 +161,12 @@ $(document).ready(function() {
         var xx = chooseProduct.val();
         if (xx == 'Booklet_(termo-glue)')
         {
-            $('#lamination').attr('disabled', 'disabled');
-            $('#uf').attr('disabled', 'disabled');
+            $('#lamination').load("default_lamination.php", function(){
+                $('#lamination').attr('disabled', 'disabled');
+            });
+            $('#uf').load("default_uf", function(){
+                $('#uf').attr('disabled', 'disabled');
+            });
             $('#density').load("update_glue_density.php?ch=" + x);
         }
         else
@@ -202,7 +219,9 @@ $(document).ready(function() {
         var a = v.split(' ');
         if (a[0] != 'no' && a[1] == 'glossy')
         {
-            $('#uf').attr('disabled', 'disabled');
+            $('#uf').load("default_uf", function(){
+                $('#uf').attr('disabled', 'disabled');
+            });
             $('#choose_uf').attr('disabled', 'disabled');
             // $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
         }

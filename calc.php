@@ -190,39 +190,21 @@ require_once 'save_materials.php';
                                     </div>
                                     <div class="span2" style="width:150px; margin-left:10px;"><label for="vd">Покрытие ВД-лаком:</label></div>
                                     <div class="span3">
-                                        <select name="vd" id="vd" style="width:170px;">
-                                            <option value="no">Не покрывать</option>
-                                            <option value="one matted">Односторонний матовый</option>
-                                            <option value="one glossy">Односторонний глянцевый</option>
-                                            <option value="one offset">Односторонний офсетный</option>
-                                            <option value="two matted">Двусторонний матовый</option>
-                                            <option value="two glossy">Двусторонний глянцевый</option>
-                                            <option value="two offset">Двусторонний офсетный</option>
-                                        </select>
+                                        <select name="vd" id="vd" style="width:170px;"></select>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span1 help-calc"></div>
                                     <div class="span2" style="width:150px; margin-left:10px;"><label for="lamination">Ламинация:</label></div>
                                     <div class="span3">
-                                        <select name="lamination" id="lamination" style="width:170px;">
-                                            <option value="no">Без ламинации</option>
-                                            <option value="one matted">Односторонняя матовая</option>
-                                            <option value="one glossy">Односторонняя глянцевая</option>
-                                            <option value="two matted">Двусторонняя матовая</option>
-                                            <option value="two glossy">Двусторонняя глянцевая</option>
-                                        </select>
+                                        <select name="lamination" id="lamination" style="width:170px;"></select>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span1 help-calc"></div>
                                     <div class="span2" style="width:150px; margin-left:10px;"><label for="uf">Покрытие УФ-лаком:</label></div>
                                     <div class="span3">
-                                        <select name="uf" id="uf" style="width:170px;">
-                                            <option value="no">Не покрывать</option>
-                                            <option value="one glossy">Односторонний глянцевый</option>
-                                            <option value="two glossy">Двусторонний глянцевый</option>
-                                        </select>
+                                        <select name="uf" id="uf" style="width:170px;"></select>
                                         <br>
                                         <label class="checkbox" style="margin-left:16px;" id="uf_checkbox">
                                             <input type="hidden" name="choose_uf" id="choose_uf" value="" disabled="disabled">
