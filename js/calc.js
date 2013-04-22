@@ -48,6 +48,11 @@ $(document).ready(function() {
         $('#uf').load("default_uf.php", function(){
             $('#uf').change();
         });
+        $('#cover-vd').load("default_vd.php");
+        $('#cover-lamination').load("default_lamination.php");
+        $('#cover-uf').load("default_uf.php", function(){
+            $('#cover-uf').change();
+        });
         $('#new_format').removeAttr('checked');
         $('#new_format').change();
         var x = chooseProduct.val();
@@ -150,6 +155,7 @@ $(document).ready(function() {
                 $('#lamination').attr('disabled', 'disabled');
             });
             $('#uf').load("default_uf.php", function(){
+                $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
         }
@@ -165,6 +171,7 @@ $(document).ready(function() {
                 $('#lamination').attr('disabled', 'disabled');
             });
             $('#uf').load("default_uf.php", function(){
+                $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
             $('#density').load("update_glue_density.php?ch=" + x);
@@ -187,8 +194,13 @@ $(document).ready(function() {
         });
         if (x == 'offset')
         {
-            $('#cover-lamination').attr('disabled', 'disabled');
-            $('#cover-uf').attr('disabled', 'disabled');
+            $('#cover-lamination').load("default_lamination.php", function(){
+                $('#cover-lamination').attr('disabled', 'disabled');
+            });
+            $('#cover-uf').load("default_uf.php", function(){
+                $('#cover-uf').change();
+                $('#cover-uf').attr('disabled', 'disabled');
+            });
         }
         else
         {
@@ -220,9 +232,9 @@ $(document).ready(function() {
         if (a[0] != 'no' && a[1] == 'glossy')
         {
             $('#uf').load("default_uf.php", function(){
+                $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
-            $('#choose_uf').attr('disabled', 'disabled');
             // $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
         }
         else
@@ -238,7 +250,10 @@ $(document).ready(function() {
         var a = v.split(' ');
         if (a[0] != 'no' && a[1] == 'glossy')
         {
-            $('#cover-uf').attr('disabled', 'disabled');
+            $('#cover-uf').load("default_uf.php", function(){
+                $('#cover-uf').change();
+                $('#cover-uf').attr('disabled', 'disabled');
+            });            
             $('#choose_cover-uf').attr('disabled', 'disabled');
         }
         else

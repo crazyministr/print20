@@ -161,7 +161,7 @@ require_once 'save_materials.php';
                         </div>
                         <div class="row">
                             <div class="span3">
-                                <select name="cover-surface" id="cover-glossy" style="width:170px;">
+                                <select name="cover-surface" id="cover-surface" style="width:170px;">
                                     <option value="matted">Матовая</option>
                                     <option value="glossy">Глянцевая</option>
                                 </select>
@@ -169,11 +169,7 @@ require_once 'save_materials.php';
                         </div>
                         <div class="row">
                             <div class="span3">
-                                <select name="cover-density" id="cover-density" style="width:170px; float:left;">
-                                    <!--                                <option value="90">90</option>
-                                                                    <option value="100">100</option>
-                                                                    <option value="210">210</option>-->
-                                </select>
+                                <select name="cover-density" id="cover-density" style="width:170px; float:left;"></select>
                                 <p>г/м<sup>2</sup></p>
                             </div>
                         </div>
@@ -219,15 +215,7 @@ require_once 'save_materials.php';
                                 <p style="text-align:center; font-weight:bold;">Обложка</p>
                                 <div class="row">
                                     <div class="span3">
-                                        <select name="cover-vd" id="cover-vd" style="width:170px;">
-                                            <option value="no">Не покрывать</option>
-                                            <option value="one matted">Односторонний матовый</option>
-                                            <option value="one glossy">Односторонний глянцевый</option>
-                                            <option value="one offset">Односторонний офсетный</option>
-                                            <option value="two matted">Двусторонний матовый</option>
-                                            <option value="two glossy">Двусторонний глянцевый</option>
-                                            <option value="two offset">Двусторонний офсетный</option>
-                                        </select>
+                                        <select name="cover-vd" id="cover-vd" style="width:170px;"></select>
                                     </div>    
                                 </div>
                                 <div class="row">
@@ -237,11 +225,7 @@ require_once 'save_materials.php';
                                 </div>
                                 <div class="row">
                                     <div class="span3">
-                                        <select name="cover-uf" id="cover-uf" style="width:170px;">
-                                            <option value="no">Не покрывать</option>
-                                            <option value="one glossy">Односторонний глянцевый</option>
-                                            <option value="two glossy">Двусторонний глянцевый</option>
-                                        </select>
+                                        <select name="cover-uf" id="cover-uf" style="width:170px;"></select>
                                         <br>
                                         <label class="checkbox" style="margin-left:1px;" id="cover_uf_checkbox">
                                             <input type="hidden" name="choose_cover_uf" id="choose_cover_uf" value=""> 
