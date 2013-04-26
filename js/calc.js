@@ -287,7 +287,19 @@ $(document).ready(function() {
         var v = $(this).val();
         if (v != "no")
             v = "";
-        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v);
+        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v, function(){
+            var x = chooseProduct.val();
+            if (x == 'Booklet_(termo-glue)')
+            {
+                $('#choose_cover_uf').attr('checked', 'checked');
+                $('#choose_cover_uf').attr('disabled', 'disabled');
+            }
+            else
+            {
+                $('#choose_cover_uf').removeAttr('checked');
+                $('#choose_cover_uf').removeAttr('disabled');
+            }            
+        });
     });
 
 
