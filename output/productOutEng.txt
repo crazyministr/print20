@@ -2,26 +2,26 @@ Product: Booklet
 Format: 148x105
 Weight: 2.0
 Spread format: 148x210
-Circulation: 100
+Circulation: 1
 operations: 100.0
     packing: 100.0
 materials: -
 block
     Printing machine: Digital printer
-    operations: 553.0
+    operations: 550.03
         folding: 550.0
-        cutting: 3.0
-    materials: 37.24
-        paper: 37.24
+        cutting: 0.03
+    materials: 3.32
+        paper: 3.32
     Sheets on product: 0.25
     Printing on itself: NO.
     Paper: 1330.0, Бумага 'ТомОтто' глянцевая, матовая 47*65, 90 г/м2
-    Paper count: 28
+    Paper count: 2
     Paper cutting count: 470x315 (x2)
     Optimal layout: 4 spread on sheet
     Product orientation: VERTICAL
-    Worksheet runs: 50
+    Worksheet runs: 0
     Pringint time: 0.0
-Printing cost: 1200.0
-Common sheets count: 28
-TOTAL: 1891.0
+Printing cost: 200.0
+Common sheets count: 2
+TOTAL: 854.0

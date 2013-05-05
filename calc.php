@@ -20,7 +20,7 @@ require_once 'save_materials.php';
 
     </head>
     <body>
-        <form action="index.php" method="post">
+        <form action="" method="POST">
             <div class="container">
                 <div class="row">
                     <div class="span9" style="text-align:center;">
@@ -248,7 +248,13 @@ require_once 'save_materials.php';
 		</div>
             </div>
             <br>
-            <center><input class="btn btn-primary" type="submit" value="Calculate"></center>
+            <center>
+		<input  type="button" onclick="saveForm()" value="Calculate">
+
+		</center>
+		<?php
+		include('index.php');
+		?>
         </form>
     </body>
 </html>

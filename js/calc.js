@@ -1,3 +1,4 @@
+function saveForm(){}
 $(document).ready(function() {
     var chooseProduct = $('#choose-product');
     var formatProduct = $('#format-product');
@@ -301,9 +302,10 @@ $(document).ready(function() {
             }            
         });
     });
-
-
+	
+	var current_form = $('form');
     $('form').submit(function() {
+	alert(current_form);
         var circulation = document.forms[0].circulation.value;
         if (circulation == 0)
         {

@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <title>Калькулятор</title>
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/calc.js"></script>
-
-        <link rel="stylesheet" href="css/bootstrap.min.css"  media="screen">
-        <link rel="stylesheet" href="css/bootstrap.css"  media="screen">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css"  media="screen">
-
-    </head>
-    <body>
-    <center>
-        <h2>Онлайн-калькулятор</h2>
         <?php
         require_once 'product.php';
         require_once 'array_to_xml.php';
@@ -50,30 +31,23 @@
         $handle = fopen($file_name, 'w');
         fwrite($handle, $xml);
         fclose($handle);
-        $report_calc = execute_calc("product");
+        
+	$calc_out = execute_calc("product");
         $handle = fopen('output/productOut.xml', 'r');
-        $productOut = '';
+	$productOut = '';
         while (!feof($handle)) {
             $productOut .= fgets($handle);
         }
         fclose($handle);
-        $result_cost = xml2array($productOut);
-        echo "<a href=" . $file_name . ">input Xml</a><br><br>";
+        $res = xml2array($productOut);
+	//var_dump($res);
+	$product_name = $post['json-product']['name_ru'];
+	$product_circulation = $post['circulation'];
+	$total_cost = $res[0]['attrs']['TOTAL'];
+	echo "Вы хотите сделать заказ " . $product_name . " тиражом в " . $product_circulation . " шт.<br>";
+	echo "Итого: " . $total_cost . "<br>";
+	echo "<br>";
+	echo "<a href=" . $file_name . ">input Xml</a><br><br>";
         echo "<a href=output/productOut.xml>output Xml</a><br><br>";
-	$comment = $post['comment'];
+	//$comment = $post['comment'];
         ?>
-
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <table>
-            <?php
-            $handle = fopen('output/productOutRus.txt', 'r');
-            while (!feof($handle)) {
-                echo '<tr><td>' . fgets($handle) . '</td></tr>';
-            }
-            fclose($handle);
-            ?>
-        </table>
-    </center>
-</form>
-</body>
-</html>
