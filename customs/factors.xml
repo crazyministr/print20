@@ -5,14 +5,17 @@
 	
 	<outlet type="mono_picture">6</outlet>
 	<outlet type="multi_picture">12</outlet>
+	<outlet type="felling_product">10</outlet>
     
     <cost resource="form" machine="sm52">156</cost>
     <cost resource="form" machine="sm74">304</cost>
 
     <cost operation="paint_run" machine="sm52">0.07</cost>
     <cost operation="paint_run" machine="sm74">0.14</cost>
-    <cost resource="pantone">2500</cost>
+    <cost resource="pantone">1000</cost>
     
+	<time operation="pantone_washing">0.66</time>
+	
     <!-- digital printing -->
     <fitting_cost operation="digital_printing">100</fitting_cost>
     
@@ -23,15 +26,15 @@
     <cost operation="paint_run" machine="6060" chrom="4" from="2000" to="3000">9</cost>
     <cost operation="paint_run" machine="6060" chrom="4" from="3000">8</cost>
     
-    <cost operation="paint_run" machine="6060" chrom="1" to="100">10</cost>   
-    <cost operation="paint_run" machine="6060" chrom="1" from="100" to="500">8</cost>
-    <cost operation="paint_run" machine="6060" chrom="1" from="500" to="1000">7</cost>
-    <cost operation="paint_run" machine="6060" chrom="1" from="1000" to="2000">5.5</cost>
-    <cost operation="paint_run" machine="6060" chrom="1" from="2000" to="3000">5</cost>
-    <cost operation="paint_run" machine="6060" chrom="1" from="3000">4.5</cost>
+    <cost operation="paint_run" machine="6060" chrom="1" to="100">20</cost>   
+    <cost operation="paint_run" machine="6060" chrom="1" from="100" to="500">15</cost>
+    <cost operation="paint_run" machine="6060" chrom="1" from="500" to="1000">12</cost>
+    <cost operation="paint_run" machine="6060" chrom="1" from="1000" to="2000">10</cost>
+    <cost operation="paint_run" machine="6060" chrom="1" from="2000" to="3000">9</cost>
+    <cost operation="paint_run" machine="6060" chrom="1" from="3000">8</cost>
     
     <!-- folding -->
-    <min_circulation_folding>1000</min_circulation_folding>
+    <min_circulation_folding>0</min_circulation_folding>
     <cost_min operation="folding" count="1">550</cost_min>
     <cost_min operation="folding" count="2">650</cost_min>
     <cost_min operation="folding" count="3">800</cost_min>
@@ -41,8 +44,12 @@
     <fitting_spread_count operation="folding">20</fitting_spread_count>
     <fitting_percentage operation="folding">0.5</fitting_percentage>
 	<max_density operation="folding">200</max_density>
+	<min_folding_weight>40</min_folding_weight>
     <cost operation="hand_folding">1</cost>
     <folding min_format="140x200" />
+	<delivery operation="folding" to="400">0</delivery>
+	<delivery operation="folding" from="400">0</delivery>
+	
     
     <!-- selection -->
     <cost operation="selection" to="10000">0.25</cost>
@@ -51,14 +58,15 @@
     <cost operation="selection" from="30000" to="50000">0.2</cost>    
     <cost operation="selection" from="50000">0.19</cost>    
     <fitting_cost operation="selection">250</fitting_cost>
-    
-    
-    <cost operation="rounding_corners">1</cost>   
+	<delivery operation="selection" to="400">0</delivery>
+	<delivery operation="selection" from="400">0</delivery>           
 
     <!-- creasing -->
     <cost operation="creasing">0.9</cost>
     <fitting_cost operation="creasing">120</fitting_cost>
     <min_density_for_creasing>200</min_density_for_creasing>
+	<delivery operation="creasing" to="400">0</delivery>
+	<delivery operation="creasing" from="400">0</delivery>
     
     <!-- impression -->
     <!-- stamping -->
@@ -71,11 +79,22 @@
     <cost_min operation="impression">1000</cost_min>
     <cost operation="impression">1</cost>
     <percentage operation="stamping">0.4</percentage>
+	<delivery operation="stamping" to="400">1200</delivery>
+	<delivery operation="stamping" from="400">3000</delivery>
+	<delivery operation="impression" to="400">1200</delivery>
+	<delivery operation="impression" from="400">3000</delivery>
     
+	<cost_min operation="counting_of_pages">450</cost_min>
     <cost operation="counting_of_pages">150</cost>
     
-    
-    
+	<!-- package -->
+    <cost operation="binding" type="package">25</cost>
+    <fitting_percentage operation="binding" type="package">0</fitting_percentage>
+    <fitting_product_count operation="binding" type="package">0</fitting_product_count>
+	<cost resource="package_handle">2.8</cost>
+	<cost resource="picalo">0.5</cost>
+	
+	
     <!-- brace binding -->
     <cost_min operation="binding" type="brace" to="17">500</cost_min>
 	<cost_min operation="binding" type="brace" from="17" to="33">600</cost_min>
@@ -93,13 +112,15 @@
 
         
     <!-- termo_glue binding -->
-    <cost operation="binding" type="termo_glue" to="100">20</cost>  
-    <cost operation="binding" type="termo_glue" from="100" to="500">15</cost>  
-    <cost operation="binding" type="termo_glue" from="500" to="1000">12</cost>  
-    <cost operation="binding" type="termo_glue" from="1000" to="2000">10</cost>  
-    <cost operation="binding" type="termo_glue" from="2000">8</cost>  
+    <cost operation="binding" type="termo_glue" to="100">22</cost>  
+    <cost operation="binding" type="termo_glue" from="100" to="500">16.5</cost>  
+    <cost operation="binding" type="termo_glue" from="500" to="1000">13.2</cost>  
+    <cost operation="binding" type="termo_glue" from="1000" to="2000">11</cost>  
+    <cost operation="binding" type="termo_glue" from="2000">8.8</cost>  
     <fitting_percentage operation="binding" type="termo_glue">0</fitting_percentage>
     <fitting_product_count operation="binding" type="termo_glue">0</fitting_product_count>
+	<delivery operation="binding" type="termo_glue" to="400">1200</delivery>
+	<delivery operation="binding" type="termo_glue" from="400">3000</delivery>
      
     <!-- spring binding -->
     <cost resource="spring">0.1</cost>
@@ -110,12 +131,12 @@
      
      
      <!-- pva_glue binding -->
-    <cost operation="binding" type="pva_glue" to="100">0.68</cost>
-    <cost operation="binding" type="pva_glue" from="100" to="200">1.36</cost>
-    <cost operation="binding" type="pva_glue" from="200" to="400">2.72</cost>
-    <cost operation="binding" type="pva_glue" from="400" to="600">3.6</cost>
-    <cost operation="binding" type="pva_glue" from="600" to="800">5.4</cost>
-    <cost operation="binding" type="pva_glue" from="800">6.8</cost>
+    <cost operation="binding" type="pva_glue" to="100">5</cost>
+    <cost operation="binding" type="pva_glue" from="100" to="200">6.5</cost>
+    <cost operation="binding" type="pva_glue" from="200" to="400">8</cost>
+    <cost operation="binding" type="pva_glue" from="400" to="600">9</cost>
+    <cost operation="binding" type="pva_glue" from="600" to="800">10</cost>
+    <cost operation="binding" type="pva_glue" from="800">11</cost>
     <fitting_percentage operation="binding" type="pva_glue">0.5</fitting_percentage>
     <fitting_product_count operation="binding" type="pva_glue">20</fitting_product_count>
      
@@ -127,7 +148,7 @@
 	<!-- packing -->
 	<cost_min operation="packing">100</cost_min>
 	<weight operation="packing">15</weight>
-	<cost operation="packing">50</cost>
+	<cost operation="packing">15</cost>
     
     
     <!-- cutting -->
@@ -142,44 +163,47 @@
     <cost_min resource="laminat" type="glossy">150</cost_min>    
     <cost_min resource="laminat" type="matte">200</cost_min>
     <max_length resource="laminat">510</max_length>
-    <cost resource="laminat" type="matte">2.3</cost>
-    <cost resource="laminat" type="glossy">1.8</cost>
+    <cost resource="laminat" type="matte">3.75</cost>
+    <cost resource="laminat" type="glossy">1.6</cost>
     <ratio resource="laminat">1.05</ratio>
-    <cost operation="lamination">1.4</cost>
+    <cost operation="lamination">1.35</cost>
     <fitting_percentage operation="lamination">0.5</fitting_percentage>
     <fitting_paper_count operation="lamination">20</fitting_paper_count>
     
     <!-- vd_varnish -->
     <consumption resource="vd_varnish" material="paper">1.2</consumption>   
+	<consumption resource="vd_varnish" material="self_adhesive">1.2</consumption> 
     <consumption resource="vd_varnish" material="carton">1.2</consumption>
     <consumption resource="vd_varnish" material="offset">1.5</consumption>
-    <cost resource="vd_varnish" type="matte">120</cost>
-    <cost resource="vd_varnish" type="glossy">100</cost>
-	<cost resource="vd_varnish" type="offset">100</cost>
+    <cost resource="vd_varnish" type="matte">345</cost>
+    <cost resource="vd_varnish" type="glossy">200</cost>
+	<cost resource="vd_varnish" type="offset">200</cost>
     <fitting_paper_count operation="vd_varnishing">20</fitting_paper_count>
     <fitting_time operation="vd_varnishing" type="glossy">0.03</fitting_time>
 	<fitting_time operation="vd_varnishing" type="offset">0.03</fitting_time>
     <fitting_time operation="vd_varnishing" type="matte">0.05</fitting_time>
     <cost operation="cutting" resource="rubber">900</cost>
     
-    <!-- uf_varnish-->
+    <!-- uf_varnish -->
     <min_density_uf_varnish>115</min_density_uf_varnish>
     <consumption resource="uf_varnish">20</consumption>
     <cost resource="uf_varnish" type="glossy">88</cost>
     <cost resource="uf_varnish" type="matte">100</cost>
-    <cost_min operation="uf_varnishing">1500</cost_min>
-    <cost operation="uf_varnishing_run" to="200">5.4</cost>
-    <cost operation="uf_varnishing_run" from="200" to="500">3.4</cost>
-    <cost operation="uf_varnishing_run" from="500" to="1000">3.1</cost>
-    <cost operation="uf_varnishing_run" from="1000" to="2000">2.9</cost>
-    <cost operation="uf_varnishing_run" from="2000" to="3000">2.6</cost>
-    <cost operation="uf_varnishing_run" from="3000" to="5000">2.1</cost>
-    <cost operation="uf_varnishing_run" from="5000" to="10000">1.9</cost>
-    <cost operation="uf_varnishing_run" from="10000" to="20000">1.8</cost>
-    <cost operation="uf_varnishing_run" from="20000">1.7</cost>
+    <cost_min operation="uf_varnishing">1650</cost_min>
+    <cost operation="uf_varnishing_run" to="200">6</cost>
+    <cost operation="uf_varnishing_run" from="200" to="500">3.8</cost>
+    <cost operation="uf_varnishing_run" from="500" to="1000">3.4</cost>
+    <cost operation="uf_varnishing_run" from="1000" to="2000">3.2</cost>
+    <cost operation="uf_varnishing_run" from="2000" to="3000">2.7</cost>
+    <cost operation="uf_varnishing_run" from="3000" to="5000">2.3</cost>
+    <cost operation="uf_varnishing_run" from="5000" to="10000">2.1</cost>
+    <cost operation="uf_varnishing_run" from="10000" to="20000">2</cost>
+    <cost operation="uf_varnishing_run" from="20000">1.9</cost>
     <fitting_percentage operation="uf_varnishing">0.5</fitting_percentage>
     <fitting_paper_count operation="uf_varnishing">20</fitting_paper_count>
     <cost resource="film">600</cost>
+	<delivery operation="uf_varnishing" to="400">1200</delivery>
+	<delivery operation="uf_varnishing" from="400">3000</delivery>
     
     <!-- felling -->
     <cost resource="blade">1000</cost>
@@ -192,12 +216,14 @@
     <complexity operation="felling" from="8">1.25</complexity>
     <complexity operation="felling" material="paper" to="200">1.15</complexity>
     <complexity operation="felling" material="paper" from="200">1</complexity>
+	<complexity operation="felling" material="self_adhesive" to="200">1.15</complexity>
+    <complexity operation="felling" material="self_adhesive" from="200">1</complexity>
     <complexity operation="felling" material="corrugated_carton">1.8</complexity>
     <complexity operation="felling" material="gash">1.2</complexity>
     <complexity operation="felling" material="bookbinding_carton">2.3</complexity>
     
     <!-- boring -->
-    <cost operation="boring">240</cost>
+    <cost_min operation="boring">240</cost_min>
     <ratio operation="boring">0.1</ratio>
     <complexity operation="boring" to="301">2</complexity>
     <complexity operation="boring" from="301">2.3</complexity>  
@@ -207,9 +233,11 @@
     <!-- speed -->
     <speed operation="printing" machine="sm52" material="carton">7000</speed>
     <speed operation="printing" machine="sm52" material="paper">11000</speed>
+	<speed operation="printing" machine="sm52" material="self_adhesive">11000</speed>
     <speed operation="printing" machine="sm52" material="offset">11000</speed>
     <speed operation="printing" machine="sm74" material="carton">7000</speed>
     <speed operation="printing" machine="sm74" material="paper">7000</speed>
+	<speed operation="printing" machine="sm74" material="self_adhesive">7000</speed>
     <speed operation="printing" machine="sm74" material="offset">7000</speed>
     
     <fitting_time machine="sm52">0.06</fitting_time>
@@ -228,8 +256,6 @@
     <fitting_paper_count machine="sm74">30</fitting_paper_count>
     
     <max_density>1320</max_density>
-    <min_print_cost>3000</min_print_cost>
-    
-    <cost operation="calendar_asembly">25</cost>
+    <min_print_cost>3000</min_print_cost>       
     
 </factors>

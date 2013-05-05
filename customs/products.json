@@ -233,4 +233,83 @@
 		},
         "common_operations": {}
     }
+	
+	"Package(one sheet)": {
+        "name": "Package (one sheet)",
+        "name_ru": "Пакет (один лист)",
+        "is_folded": false,            
+        "folding_count": 0,
+        "is_bind": true,
+        "binding_type": "package",
+        "pages_on_spread": 2,
+		"spreads_on_prod": 1,
+		"is_felling": true, 
+        "formats": ["150x90x50", "250x250x90", "350x95x90", "220x170x95", "300x210x90", "300x250x80", "350x245x90", "320x255x90", "385x255x90"],
+		"stamps": ["150x90x50:289x210", "250x250x90:695x350", "350x95x90:400x428", "220x170x95:550x320", "300x210x90:620x415", "300x250x80:680x390", "350x245x90:690x460", "320x255x90:706x419", "385x255x90:706x483"],
+        "is_mono_picture": true,
+        "type": "package",
+		"block_operations": {
+			"felling": []
+		},
+        "common_operations": {
+			"binding": ["type:package"]	
+		}
+    }
+	
+	"Package(two sheet)": {
+        "name": "Package (two sheet)",
+        "name_ru": "Пакет (два листа)",
+        "is_folded": false,            
+        "folding_count": 0,
+        "is_bind": true,
+        "binding_type": "package",
+        "pages_on_spread": 2,
+		"spreads_on_prod": 2,
+		"is_felling": true, 
+        "formats": ["400*300*120", "220*340*120", "265*345*69", "320*440*70", "300*400*100", "300*400*120", "360*420*120", "450*387*90"],
+		"stamps": ["400*300*120:440x530", "220*340*120:480x340", "265*345*69:436x368", "320*440*70:530x412", "300*400*100:525x427", "300*400*120:540x430", "360*420*120:560x490", "450*387*90:494x565"],
+        "is_mono_picture": true,
+        "type": "package",
+		"block_operations": {
+			"felling": []
+		},
+        "common_operations": {
+			"binding": ["type:package"]	
+		}
+    }
+	
+	"Sticker": {
+        "name": "Sticker",
+        "name_ru": "Наклейка",
+        "is_folded": false,            
+        "folding_count": 0,
+        "is_bind": false,
+        "binding_type": null,
+        "pages_on_spread": 2,
+		"spreads_on_prod": 1,
+		"is_felling": false, 
+        "formats": ["148x210", "200x200", "90x90"],		
+        "is_mono_picture": true,
+        "type": "singlepage",
+		"block_operations": {},
+        "common_operations": {}
+    }	
+	
+	"Stamping sticker": {
+        "name": "Stamping sticker",
+        "name_ru": "Наклейка вырубная",
+        "is_folded": false,            
+        "folding_count": 0,
+        "is_bind": false,
+        "binding_type": null,
+        "pages_on_spread": 2,
+		"is_felling": true, 
+        "formats": ["148x210", "200x200", "90x90"],
+        "is_mono_picture": true,
+        "type": "singlepage",
+		"block_operations": {
+			"felling": []
+		},
+        "common_operations": {}
+    }
 }

@@ -20,7 +20,7 @@ require_once 'save_materials.php';
 
     </head>
     <body>
-        <form action="" method="POST">
+        <form id="calc-form" action="" method="post">
             <div class="container">
                 <div class="row">
                     <div class="span9" style="text-align:center;">
@@ -249,7 +249,7 @@ require_once 'save_materials.php';
             </div>
             <br>
             <center>
-		<input  type="button" onclick="saveForm()" value="Calculate">
+		<input  type="submit" value="Calculate">
 
 		</center>
 		<?php

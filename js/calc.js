@@ -1,4 +1,46 @@
-function saveForm(){}
+var form = function() {
+    var circulation = document.forms[0].circulation.value;
+    if (circulation == 0)
+    {
+        alert("Тираж должен быть больше нуля");
+        document.forms[0].circulation.focus();
+        return false;
+    }
+
+    var product_width = $('#format-width').val();
+    var product_height = $('#format-height').val();
+    if (product_width == "" || product_height == "")
+    {
+        alert("Неверный формат");
+        return false;
+    }
+    var v = document.forms[0].pages.value;
+    var x = chooseProduct.val();
+    if (v == 0 || v % 2 != 0)
+    {
+        if (v == 0)
+            alert("Количество полос в блоке должно быть больше нуля");
+        else
+        {
+            if (x == "Booklet_(brace)")
+                alert("Количество полос в блоке данного продукта должно быть кратно четырём");
+            else
+                alert("Количество полос в блоке данного продукта должно быть кратно двум");
+        }
+        document.forms[0].pages.focus();
+        return false;
+    }
+    formatProduct.removeAttr('disabled');
+    $('#format-width, #format-height').removeAttr('disabled');
+    $('#pages').removeAttr('disabled');
+    $('#cover-pages').removeAttr('disabled');
+    return true;
+}
+
+function saveForm() {
+    $('form').submit(form());
+}
+
 $(document).ready(function() {
     var chooseProduct = $('#choose-product');
     var formatProduct = $('#format-product');
@@ -31,8 +73,6 @@ $(document).ready(function() {
     {
         formatProduct.change(function() {
             var product_format = $(this).val();
-            var product_width = '';
-            var product_height = '';
             var a = product_format.split('x');
             $('#format-width').val(a[0]);
             $('#format-height').val(a[1]);
@@ -46,12 +86,12 @@ $(document).ready(function() {
     chooseProduct.change(function() {
         $('#vd').load("default_vd.php");
         $('#lamination').load("default_lamination.php");
-        $('#uf').load("default_uf.php", function(){
+        $('#uf').load("default_uf.php", function() {
             $('#uf').change();
         });
         $('#cover-vd').load("default_vd.php");
         $('#cover-lamination').load("default_lamination.php");
-        $('#cover-uf').load("default_uf.php", function(){
+        $('#cover-uf').load("default_uf.php", function() {
             $('#cover-uf').change();
         });
         $('#new_format').removeAttr('checked');
@@ -87,7 +127,7 @@ $(document).ready(function() {
         $('#lamination').load("update_lamination_glue.php?ch=" + x, function() {
             if (x == "Booklet_(termo-glue)")
             {
-                $('#lamination').load("default_lamination.php", function(){
+                $('#lamination').load("default_lamination.php", function() {
                     $('#lamination').attr('disabled', 'disabled');
                 });
             }
@@ -152,10 +192,10 @@ $(document).ready(function() {
         });
         if (x == 'offset')
         {
-            $('#lamination').load("default_lamination.php", function(){
+            $('#lamination').load("default_lamination.php", function() {
                 $('#lamination').attr('disabled', 'disabled');
             });
-            $('#uf').load("default_uf.php", function(){
+            $('#uf').load("default_uf.php", function() {
                 $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
@@ -168,10 +208,10 @@ $(document).ready(function() {
         var xx = chooseProduct.val();
         if (xx == 'Booklet_(termo-glue)')
         {
-            $('#lamination').load("default_lamination.php", function(){
+            $('#lamination').load("default_lamination.php", function() {
                 $('#lamination').attr('disabled', 'disabled');
             });
-            $('#uf').load("default_uf.php", function(){
+            $('#uf').load("default_uf.php", function() {
                 $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
@@ -195,10 +235,10 @@ $(document).ready(function() {
         });
         if (x == 'offset')
         {
-            $('#cover-lamination').load("default_lamination.php", function(){
+            $('#cover-lamination').load("default_lamination.php", function() {
                 $('#cover-lamination').attr('disabled', 'disabled');
             });
-            $('#cover-uf').load("default_uf.php", function(){
+            $('#cover-uf').load("default_uf.php", function() {
                 $('#cover-uf').change();
                 $('#cover-uf').attr('disabled', 'disabled');
             });
@@ -232,7 +272,7 @@ $(document).ready(function() {
         var a = v.split(' ');
         if (a[0] != 'no' && a[1] == 'glossy')
         {
-            $('#uf').load("default_uf.php", function(){
+            $('#uf').load("default_uf.php", function() {
                 $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
@@ -251,10 +291,10 @@ $(document).ready(function() {
         var a = v.split(' ');
         if (a[0] != 'no' && a[1] == 'glossy')
         {
-            $('#cover-uf').load("default_uf.php", function(){
+            $('#cover-uf').load("default_uf.php", function() {
                 $('#cover-uf').change();
                 $('#cover-uf').attr('disabled', 'disabled');
-            });            
+            });
             $('#choose_cover-uf').attr('disabled', 'disabled');
         }
         else
@@ -268,7 +308,7 @@ $(document).ready(function() {
         var v = $(this).val();
         if (v != "no")
             v = "";
-        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function(){
+        $('#uf_checkbox').load("update_uf_checkbox.php?ch=" + v, function() {
             var x = chooseProduct.val();
             if (x == 'Booklet_(termo-glue)')
             {
@@ -288,7 +328,7 @@ $(document).ready(function() {
         var v = $(this).val();
         if (v != "no")
             v = "";
-        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v, function(){
+        $('#cover_uf_checkbox').load("update_cover_uf_checkbox.php?ch=" + v, function() {
             var x = chooseProduct.val();
             if (x == 'Booklet_(termo-glue)')
             {
@@ -299,48 +339,10 @@ $(document).ready(function() {
             {
                 $('#choose_cover_uf').removeAttr('checked');
                 $('#choose_cover_uf').removeAttr('disabled');
-            }            
+            }
         });
     });
-	
-	var current_form = $('form');
-    $('form').submit(function() {
-	alert(current_form);
-        var circulation = document.forms[0].circulation.value;
-        if (circulation == 0)
-        {
-            alert("Тираж должен быть больше нуля");
-            document.forms[0].circulation.focus();
-            return false;
-        }
 
-        var product_width = $('#format-width').val();
-        var product_height = $('#format-height').val();
-        if (product_width == "" || product_height == "")
-        {
-            alert("Неверный формат");
-            return false;
-        }
-        var v = document.forms[0].pages.value;
-        var x = chooseProduct.val();
-        if (v == 0 || v % 2 != 0)
-        {
-            if (v == 0)
-                alert("Количество полос в блоке должно быть больше нуля");
-            else
-            {
-                if (x == "Booklet_(brace)")
-                    alert("Количество полос в блоке данного продукта должно быть кратно четырём");
-                else
-                    alert("Количество полос в блоке данного продукта должно быть кратно двум");
-            }
-            document.forms[0].pages.focus();
-            return false;
-        }
-        formatProduct.removeAttr('disabled');
-        $('#format-width, #format-height').removeAttr('disabled');
-        $('#pages').removeAttr('disabled');
-        $('#cover-pages').removeAttr('disabled');
-        return true;
-    })
-})
+    $('calc-form').ajaxForm(form());
+    //$('form').submit(form());
+});
