@@ -1,46 +1,3 @@
-var form = function() {
-    var circulation = document.forms[0].circulation.value;
-    if (circulation == 0)
-    {
-        alert("Тираж должен быть больше нуля");
-        document.forms[0].circulation.focus();
-        return false;
-    }
-
-    var product_width = $('#format-width').val();
-    var product_height = $('#format-height').val();
-    if (product_width == "" || product_height == "")
-    {
-        alert("Неверный формат");
-        return false;
-    }
-    var v = document.forms[0].pages.value;
-    var x = chooseProduct.val();
-    if (v == 0 || v % 2 != 0)
-    {
-        if (v == 0)
-            alert("Количество полос в блоке должно быть больше нуля");
-        else
-        {
-            if (x == "Booklet_(brace)")
-                alert("Количество полос в блоке данного продукта должно быть кратно четырём");
-            else
-                alert("Количество полос в блоке данного продукта должно быть кратно двум");
-        }
-        document.forms[0].pages.focus();
-        return false;
-    }
-    formatProduct.removeAttr('disabled');
-    $('#format-width, #format-height').removeAttr('disabled');
-    $('#pages').removeAttr('disabled');
-    $('#cover-pages').removeAttr('disabled');
-    return true;
-}
-
-function saveForm() {
-    $('form').submit(form());
-}
-
 $(document).ready(function() {
     var chooseProduct = $('#choose-product');
     var formatProduct = $('#format-product');
@@ -343,6 +300,4 @@ $(document).ready(function() {
         });
     });
 
-    $('calc-form').ajaxForm(form());
-    //$('form').submit(form());
 });

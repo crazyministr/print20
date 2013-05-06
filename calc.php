@@ -12,6 +12,7 @@ require_once 'save_materials.php';
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/calc.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
 
         <link rel="stylesheet" href="css/bootstrap.min.css"  media="screen">
         <link rel="stylesheet" href="css/bootstrap.css"  media="screen">
@@ -20,7 +21,7 @@ require_once 'save_materials.php';
 
     </head>
     <body>
-        <form id="calc-form" action="" method="post">
+        <form action="" method="post">
             <div class="container">
                 <div class="row">
                     <div class="span9" style="text-align:center;">
@@ -205,10 +206,10 @@ require_once 'save_materials.php';
                                         <label class="checkbox" style="margin-left:16px;" id="uf_checkbox">
                                             <input type="hidden" name="choose_uf" id="choose_uf" value="" disabled="disabled">
                                         </label>
-<!--                                         <label class="checkbox" style="margin-left:16px;" id="solid_checkbox">
-                                            <input type="hidden" name="solid_uf" id="solid_uf" value="" disabled="disabled"> 
-                                        </label>
- -->                                    </div>
+                                        <!--                                         <label class="checkbox" style="margin-left:16px;" id="solid_checkbox">
+                                                                                    <input type="hidden" name="solid_uf" id="solid_uf" value="" disabled="disabled"> 
+                                                                                </label>
+                                        -->                                    </div>
                                 </div>
                             </div>
                             <div class="span3 fourth" style="display:none; min-height:185px;" id="sixth-param">
@@ -230,31 +231,28 @@ require_once 'save_materials.php';
                                         <label class="checkbox" style="margin-left:1px;" id="cover_uf_checkbox">
                                             <input type="hidden" name="choose_cover_uf" id="choose_cover_uf" value=""> 
                                         </label>
-<!--                                         <label class="checkbox" style="margin-left:16px;" id="cover_solid_checkbox">
-                                            <input type="hidden" name="solid_cover_uf" id="solid_cover_uf" value="" disabled="disabled"> 
-                                        </label>
- -->                                    </div>
+                                        <!--                                         <label class="checkbox" style="margin-left:16px;" id="cover_solid_checkbox">
+                                                                                    <input type="hidden" name="solid_cover_uf" id="solid_cover_uf" value="" disabled="disabled"> 
+                                                                                </label>
+                                        -->                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-		<div class="row">
-			<div class="span3" id="seven" style="min-height:80px; min-width:460px;">
+                <div class="row">
+                    <div class="span3" id="seven" style="min-height:80px; min-width:460px;">
                         <p style="text-align:center; font-weight:bold;">Комментарии к заказу</p>
-			<textarea id="comment" name="comment" rows="3" style="width:425px; margin-left:10px;"></textarea>
-			</div>
-		</div>
+                        <textarea id="comment" name="comment" rows="3" style="width:425px; margin-left:10px;"></textarea>
+                    </div>
+                </div>
             </div>
             <br>
             <center>
-		<input  type="submit" value="Calculate">
-
-		</center>
-		<?php
-		include('index.php');
-		?>
+                <input type="button" id="Calculate" onclick="send();" value="Calculate"/>
+            </center>
         </form>
+        <div id="result"></div>
     </body>
 </html>
