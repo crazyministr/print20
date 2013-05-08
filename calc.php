@@ -65,15 +65,15 @@ require_once 'save_materials.php';
                         <div class="row">
                             <div class="span1 help-calc"></div>
                             <div class="span2" style="width:158px; margin-left:10px;">
-                                <label for="format-width">Высота:</label>
-                                <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
+                                <label for="format-width">Ширина:</label>
+                                <input type="text" maxlength="3" name="format-height" id="format-height" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
                             </div>
                             <div class="span1" style="width:40px; margin-left:10px;" title="Повернуть">
                                 <button class="btn" type="button" id="exchange"><i class="icon-exchange icon-1.5x"></i></button>
                             </div>
                             <div class="span2" style="width:162px; margin-left:13px;">
-                                <label for="format-height">Ширина:</label>
-                                <input type="text" maxlength="3" name="format-height" id="format-height" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
+                                <label for="format-height">Высота:</label>
+                                <input type="text" maxlength="3" name="format-width" id="format-width" style="width:50px" value="" disabled pattern="^[ 0-9]+$"><p>мм</p>
                             </div>
                         </div>
                     </div>
@@ -192,9 +192,9 @@ require_once 'save_materials.php';
                                 </div>
                                 <div class="row">
                                     <div class="span1 help-calc"></div>
-                                    <div class="span2" style="width:150px; margin-left:10px;"><label for="lamination">Ламинация:</label></div>
+                                    <div class="span2" style="width:150px; margin-left:10px;"><label for="lamination">Ламинация 25 мкм:</label></div>
                                     <div class="span3">
-                                        <select name="lamination" id="lamination" style="width:170px;"></select>
+                                        <select name="lamination" id="lamination" style="width:170px;" disabled="disabled"></select>
                                     </div>
                                 </div>
                                 <div class="row">

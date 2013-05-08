@@ -31,8 +31,8 @@ $(document).ready(function() {
         formatProduct.change(function() {
             var product_format = $(this).val();
             var a = product_format.split('x');
-            $('#format-width').val(a[0]);
-            $('#format-height').val(a[1]);
+            $('#format-width').val(a[1]);
+            $('#format-height').val(a[0]);
         })
     }
 
@@ -120,14 +120,15 @@ $(document).ready(function() {
             $('#cover-material').load("update_material_product.php?ch=" + "enabled");
             $('#cover-density').load("update_kubarik_density.php?ch=" + 1000);
         }
+        if (x == 'Eurobuklet' || x == 'Booklet' || x == 'Booklet_3'){
+            alert("Внимание фальцовка производиться параллельно высоте изделия!");
+        }
 
         formatProduct.load("update_format_product.php?ch=" + x, function() {
             var product_format = $(this).val();
-            var product_width = '';
-            var product_height = '';
             var a = product_format.split('x');
-            $('#format-width').val(a[0]);
-            $('#format-height').val(a[1]);
+            $('#format-width').val(a[1]);
+            $('#format-height').val(a[0]);
             if (formatProduct.children().length < 2)
                 formatProduct.attr('disabled', 'disabled');
             else
@@ -233,13 +234,11 @@ $(document).ready(function() {
                 $('#uf').change();
                 $('#uf').attr('disabled', 'disabled');
             });
-            // $('#impression-width, #impression-height, #impression-times').removeAttr("disabled");
         }
         else
         {
             $('#uf').removeAttr('disabled');
             $('#choose_uf').removeAttr('disabled');
-            // $('#impression-width, #impression-height, #impression-times').attr("disabled", "disabled");
         }
     });
 
@@ -300,4 +299,18 @@ $(document).ready(function() {
         });
     });
 
+    var density = $('#density');
+    
+    density.change(function() {
+        var v = $(this).val();
+        if (v < "130" || v == "90") {
+            $('#lamination').load("default_lamination.php");
+            $('#lamination').attr('disabled', 'disabled');
+        }
+        else
+        {
+            $('#lamination').removeAttr('disabled');
+        }
+    });
+    density.change();
 });
