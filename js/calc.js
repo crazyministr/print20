@@ -120,8 +120,13 @@ $(document).ready(function() {
             $('#cover-material').load("update_material_product.php?ch=" + "enabled");
             $('#cover-density').load("update_kubarik_density.php?ch=" + 1000);
         }
-        if (x == 'Eurobuklet' || x == 'Booklet' || x == 'Booklet_3'){
-            alert("Внимание фальцовка производиться параллельно высоте изделия!");
+        if (x == 'Eurobuklet' || x == 'Booklet' || x == 'Booklet_3') 
+        {
+            alert("Внимание фальцовка производиться параллельно высоте изделия! Формат изделия вводиться в сложенном виде!");
+        }
+        if (x == 'Flyer')
+        {
+            $('#material').load("update_material_product.php?ch=" + "enabledX");
         }
 
         formatProduct.load("update_format_product.php?ch=" + x, function() {
