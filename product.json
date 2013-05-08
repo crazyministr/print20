@@ -24,7 +24,23 @@
 		"pages_on_spread": 6,
 		"formats": ["210x99"],
 		"name": "Eurobooklet",
-        "name_ru": "Евробуклет",
+        "name_ru": "Буклет с 2 фальцами",
+		"is_felling": false, 
+		"binding_type": null,
+        "is_mono_picture": true,
+        "type": "singlepage",
+		"block_operations": {},
+		"common_operations": {}
+	},
+
+	"Booklet (3)": {
+		"folding_count": 3,
+		"is_folded": true,
+		"is_bind": false,
+		"pages_on_spread": 8,
+		"formats": ["148x105", "210x148", "210x99"],
+		"name": "Booklet (3)",
+        "name_ru": "Буклет  с 3 фальцами",
 		"is_felling": false, 
 		"binding_type": null,
         "is_mono_picture": true,
@@ -210,6 +226,41 @@
         "pages_on_spread": 2,
 		"is_felling": true, 
         "formats": ["100x100", "210x148", "297x210", "420x297", "210x210", "148x105"],
+        "is_mono_picture": true,
+        "type": "singlepage",
+		"block_operations": {
+			"felling": []
+		},
+        "common_operations": {}
+    },
+
+	"Sticker": {
+        "name": "Sticker",
+        "name_ru": "Наклейка",
+        "is_folded": false,            
+        "folding_count": 0,
+        "is_bind": false,
+        "binding_type": null,
+        "pages_on_spread": 2,
+		"spreads_on_prod": 1,
+		"is_felling": false, 
+        "formats": ["148x210", "200x200", "90x90"],		
+        "is_mono_picture": true,
+        "type": "singlepage",
+		"block_operations": {},
+        "common_operations": {}
+    },
+
+	"Stamping sticker": {
+        "name": "Stamping sticker",
+        "name_ru": "Наклейка вырубная",
+        "is_folded": false,            
+        "folding_count": 0,
+        "is_bind": false,
+        "binding_type": null,
+        "pages_on_spread": 2,
+		"is_felling": true, 
+        "formats": ["148x210", "200x200", "90x90"],
         "is_mono_picture": true,
         "type": "singlepage",
 		"block_operations": {

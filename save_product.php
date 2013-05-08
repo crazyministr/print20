@@ -28,7 +28,7 @@
     
     $product_file = file_get_contents("product.json");
     $obj = json_decode($product_file, true);
-    //var_dump($obj);
+//    var_dump($obj);
 
     $cnt = 0;
     $p = array();
