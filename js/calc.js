@@ -88,9 +88,11 @@ $(document).ready(function() {
                     $('#lamination').attr('disabled', 'disabled');
                 });
             }
-            else
+            else if (v >= "130" || v != "90") {
                 $('#lamination').removeAttr('disabled');
+            }
         });
+        $('#lamination').attr('disabled', 'disabled');
 
         if (x == 'Booklet_(termo-glue)')
         {
@@ -120,7 +122,7 @@ $(document).ready(function() {
             $('#cover-material').load("update_material_product.php?ch=" + "enabled");
             $('#cover-density').load("update_kubarik_density.php?ch=" + 1000);
         }
-        if (x == 'Eurobuklet' || x == 'Booklet' || x == 'Booklet_(3)') 
+        if (x == 'Eurobooklet' || x == 'Booklet' || x == 'Booklet_(3)') 
         {
             alert("Внимание фальцовка производиться параллельно высоте изделия! Формат изделия вводиться в сложенном виде!");
         }
